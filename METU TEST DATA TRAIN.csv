@@ -1,0 +1,579 @@
+ORIGINAL,BASE QUESTION,CONTENT SUMMARY,MODEL ANSWER,Data Type ,Unnamed: 5
+"{
+                ""role"":""user"",
+                ""name"":""dcelikel@metu.edu.tr"",
+                ""timestamp"":""Wed, 08 Oct 2025 04:51:36 -0000"",
+                ""content"":""Konu: Kampüs dışından SSH bağlantısı kuramıyorum\n\nMerhaba,\n\nKullanıcı adım: dcelikel\n\nCisco Secure Client (border.metu.edu.tr) üzerinden VPN bağlantısı kurabiliyorum, ancak orca.metu.edu.tr veya external.cc.metu.edu.tr sunucularına SSH ile bağlanırken \""Connection timed out\"" hatası alıyorum.\n\nGerekli yönlendirmeyi veya profil güncellemesini sağlayabilir misiniz?\n\nTeşekkürler,\n\nDeniz Çelikel\n\nMETU \nDepartment of Statistics\nPart-Time Instructor\n+90 (536) 292 8222"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Wed, 08 Oct 2025 06:01:02 -0000"",
+                ""content"":""Merhabalar ,yardımcı olabilir misiniz ? Kolay gelsin ."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Wed, 08 Oct 2025 14:06:10 -0000"",
+                ""content"":""Sayın Çelikel,\n\nIP adresini iletebilir misiniz? VPN'e bağlanınca IP adresinizi kontrol etmemiz gerekiyor. Muhtemelen VPN sistemi yanlış olabilir. Aruba VIA kullanmanız gerekiyor.\n\nARUBA VIA için https:\/\/faq.cc.metu.edu.tr\/tr\/groups\/vpn-hizmeti adresinden gerekli bilgileri edinebilirsiniz.\n\nSaygılarımızla bilgilerinize sunarız."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""dcelikel@metu.edu.tr"",
+                ""timestamp"":""Wed, 08 Oct 2025 15:27:16 -0000"",
+                ""content"":""kişisel sayfamı oluşturacağım.\n\nputty ile yapamamıştım bağlantıyı şimdi powershelle yapabildim. Çok teşekkür ederim."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 05:38:37 -0000"",
+                ""content"":""Sayın Çelikel ,\n\nSorununuz çözüldü diye anlıyoruz ,doğrumudur ?\n\nSaygılarımızla bilgilerinize sunarız."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""dcelikel at metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 05:48:52 -0000"",
+                ""content"":""Evet hocam çözdüm çok teşekkür ederim ilginiz için."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","Konu: Kampüs dışından SSH bağlantısı kuramıyorum\n\nMerhaba,\n\nKullanıcı adım: dcelikel\n\nCisco Secure Client (border.metu.edu.tr) üzerinden VPN bağlantısı kurabiliyorum, ancak orca.metu.edu.tr veya external.cc.metu.edu.tr sunucularına SSH ile bağlanırken \""Connection timed out\"" hatası alıyorum.\n\nGerekli yönlendirmeyi veya profil güncellemesini sağlayabilir misiniz?\n\nTeşekkürler,\n\nDeniz Çelikel\n\nMETU \nDepartment of Statistics\nPart-Time Instructor\n+90 (536) 292 8222"",
+                ","SORUN: İstatistik Bölümü'nden bir öğretim elemanı, Cisco Secure Client üzerinden VPN bağlantısı kurabilmesine rağmen orca.metu.edu.tr ve external.cc.metu.edu.tr sunucularına SSH ile bağlanırken ""Connection timed out"" hatası aldığını belirterek yardım talep etmiştir.
+
+CEVAP / DÖNÜŞ: Teknik ekip, kampüs dışı erişimde kullanılan VPN sisteminin (Cisco) uyumsuz olabileceğini değerlendirerek, kullanıcının Aruba VIA yazılımını kullanması gerektiğini bildirmiştir. Bu doğrultuda kullanıcı, kurulum ve kullanım detayları için https://faq.cc.metu.edu.tr/tr/groups/vpn-hizmeti adresindeki FAQ (Sıkça Sorulan Sorular) sayfasına yönlendirilmiştir.
+
+Süreç devam ederken kullanıcı, SSH bağlantısını Putty yerine Windows PowerShell üzerinden gerçekleştirdiğini ve sorununun çözüldüğünü teyit etmiştir.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""dimer@metu.edu.tr"",
+                ""timestamp"":""Wed, 22 Oct 2025 12:43:10 -0000"",
+                ""content"":""Sayın Yetkili,\n\nDişli, Güç Aktarma Sistemleri ve Titreşim Uygulama ve Araştırma Merkezi (DİMER) bünyesinde veri depolama ve paylaşım süreçlerini düzenlemek amacıyla NAS HDD tabanlı bir depolama ağı oluşturmak istiyoruz.\n\nBu konuda uygun sistem altyapısının kurulumu, ağ bağlantısı ve erişim yetkilendirmeleri hususunda biriminizden teknik destek talep etmekteyiz.\n\nGerekli yönlendirmeleri veya sürecin başlatılması için izlememiz gereken adımlar konusunda bilgi verebilir misiniz?\n\nİlginiz ve desteğiniz için teşekkür ederiz.\n\nSaygılarımızla,\n\nDişli, Güç Aktarma Sistemleri ve Titreşim Uygulama ve Araştırma Merkezi (DİMER)"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Wed, 22 Oct 2025 13:05:38 -0000"",
+                ""content"":""Merhaba\nYardımcı olurmusunuz?"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""tbaykiz at metu.edu.tr"",
+                ""timestamp"":""Wed, 22 Oct 2025 13:13:22 -0000"",
+                ""content"":""Merhaba,\n\nNas cihazının ayarını otomatik DHCP ayarına getirmeleri gerekiyor.\nSonrasında da netregister üzerinden (Ender hocanın kaydetme yetkisi var) mac adresini tanımlarlarsa, network açısından tüm gereksinim yerine getirilmiş olur.\n\nİyi çalışmalar,"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Thu, 23 Oct 2025 06:15:35 -0000"",
+                ""content"":""Sayın Kullanıcımız,\n\nİlgili birimimiz, Nas cihazının ayarını otomatik DHCP ayarına getirmeniz gerektiğini, sonrasında da netregister üzerinden (Ender hocamızın kaydetme yetkisinin olduğunu ) mac adresini tanımlarsanız, network açısından tüm gereksinimlerin yerine getirilmiş olacağını iletmiştir.\n\nSaygılarımızla bilgilerinize sunarız.\n\nBilişim Destek Birimi"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Sayın Yetkili,\n\nDişli, Güç Aktarma Sistemleri ve Titreşim Uygulama ve Araştırma Merkezi (DİMER) bünyesinde veri depolama ve paylaşım süreçlerini düzenlemek amacıyla NAS HDD tabanlı bir depolama ağı oluşturmak istiyoruz.\n\nBu konuda uygun sistem altyapısının kurulumu, ağ bağlantısı ve erişim yetkilendirmeleri hususunda biriminizden teknik destek talep etmekteyiz.\n\nGerekli yönlendirmeleri veya sürecin başlatılması için izlememiz gereken adımlar konusunda bilgi verebilir misiniz?\n\nİlginiz ve desteğiniz için teşekkür ederiz.\n\nSaygılarımızla,\n\nDişli, Güç Aktarma Sistemleri ve Titreşim Uygulama ve Araştırma Merkezi (DİMER)"",
+                ","SORUN: Dişli, Güç Aktarma Sistemleri ve Titreşim Uygulama ve Araştırma Merkezi (DİMER), bir NAS HDD depolama ağı oluşturmak istediklerini belirterek; sistem kurulumu, ağ bağlantısı ve erişim yetkilendirmeleri için teknik destek ve izlenecek adımlar hakkında bilgi talep etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, ilgili teknik birimden aldığı bilgiler doğrultusunda şu çözüm adımlarını iletmiştir:
+
+NAS cihazının ayarları otomatik DHCP konumuna getirilmelidir.
+
+Cihazın ağ üzerinden çalışabilmesi için netregister sistemi üzerinden MAC adresi tanımlaması yapılmalıdır.
+
+Bu kayıt işlemini yapabilmek için ilgili birim bünyesinde Ender hocanın tanımlama/kaydetme yetkisinin bulunduğu belirtilmiştir.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""saktasoglu at gmail.com"",
+                ""timestamp"":""Thu, 09 Oct 2025 08:08:42 -0000"",
+                ""content"":""Merhaba,\n\nHavacılık ve Uzay Müh. Bölümü doktora öğrencisiyim. 71 no'lu programda danışman değişikliği yaparken yanlışlıkla öğrenci onayını verdim. İşlemlere devam edebilmek için onayımı kaldırmam gerekiyor ama yapamıyorum. Bu konuda yardımcı olabilir misiniz?\n\nSeyfullah Aktaşoğlu\n\n1395722"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 08:14:18 -0000"",
+                ""content"":""Sayın Aktaşoğlu,\n\n71 nolu programa Öğrenci Portal'ine giriş yaptıktan sonra menüden Tez Danışmanı Atama linkini seçerek (https:\/\/student.metu.edu.tr\/) \""............\"" dönemini seçip giriş yaptıktan sonra, master \/ doktora tezinizle ilgili bilgilerin göründüğü ekrandan tez bilgilerini değiştirebilirsiniz.\n\nAncak bunun öncesinde bölümünüzle iletişime geçerek, bilgilerinizde güncelleme yapabilmesi için bölüm onayını kaldırmalarını istemeniz gerekmektedir. Sonrasında tüm onayların yeniden tamamlanması gerekmektedir.\n\nSaygılarımızla bilgilerinize sunarız.\n\nBilişim Destek Birimi"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Merhaba,\n\nHavacılık ve Uzay Müh. Bölümü doktora öğrencisiyim. 71 no'lu programda danışman değişikliği yaparken yanlışlıkla öğrenci onayını verdim. İşlemlere devam edebilmek için onayımı kaldırmam gerekiyor ama yapamıyorum. Bu konuda yardımcı olabilir misiniz?\n\nSeyfullah Aktaşoğlu\n\n1395722"",
+                ","SORUN: Havacılık ve Uzay Mühendisliği Bölümü doktora öğrencisi, danışman değişikliği işlemi sırasında yanlışlıkla öğrenci onayını verdiğini belirtmiştir. İşlemlere devam edebilmek ve hatalı onayı geri çekebilmek için teknik destek talep etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, sistem üzerinden güncelleme yapılabilmesi için öncelikle bölüm ile iletişime geçilmesi gerektiğini bildirmiştir. Bölümün mevcut onayı kaldırması (onay sürecini geri çekmesi) durumunda, öğrencinin Öğrenci Portalı (student.metu.edu.tr) üzerinden ""Tez Danışmanı Atama"" menüsüne girerek bilgilerini güncelleyebileceği ve ardından tüm onay sürecinin (öğrenci, danışman, bölüm vb.) yeniden tamamlanması gerektiği açıklanmıştır.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""muhammed.andic@metu.edu.tr"",
+                ""timestamp"":""Wed, 08 Oct 2025 12:42:56 -0000"",
+                ""content"":""Merhaba hocam. Ben 2670586 numaralı öğrenciniz Muhammed Andiç. BA100 dersi için hesap oluştururken bu linke (https:\/\/software.cc.metu.edu.tr\/) dokunduğumda erişim engeli veriyor. Ne yapacağımı bilmiyorum ve bu yüzden bu maili atma gereği duydum. Gereğinin yapılmasını saygılarımla arz ederim."",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Wed, 08 Oct 2025 12:45:55 -0000"",
+                ""content"":""Merhaba\n\nKolay gelsin."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""swadmin at metu.edu.tr"",
+                ""timestamp"":""Wed, 08 Oct 2025 12:48:52 -0000"",
+                ""content"":""Merhaba,\n\nhttps:\/\/yazilim.cc.metu.edu.tr\/ sayfası aktif olarak kullanılabilir durumdadır.\n\nMevcut tarayıcınız üzerinden Ctrl+F5 yaparak tarayınızı yenileyerek terkrar deneyiniz.\n\nEk olarak, farklı tarayıcı (Firefox, Edge, Brave, Opera vb.) ile sayfayı açmayı deneyiniz.\n\nNot: Sorunun devam etmesi halinde hatanın ekran görüntüsünü iletiniz.\n\nBilgilerinize."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Wed, 08 Oct 2025 12:50:01 -0000"",
+                ""content"":""Sayın Andıç,\n\nhttps:\/\/yazilim.cc.metu.edu.tr\/ sayfası aktif olarak kullanılabilir durumundadır.\n\nMevcut tarayıcınız üzerinden Ctrl+F5 yaparak tarayınızı yenileyerek terkrar deneyiniz.\n\nEk olarak, farklı tarayıcı (Firefox, Edge, Brave, Opera vb.) ile sayfayı açmayı deneyiniz.\n\nNot: Sorunun devam etmesi halinde hatanın ekran görüntüsünü iletiniz.\n\nSaygılarımızla bilgilerinize sunarız."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Merhaba hocam. Ben 2670586 numaralı öğrenciniz Muhammed Andiç. BA100 dersi için hesap oluştururken bu linke (https:\/\/software.cc.metu.edu.tr\/) dokunduğumda erişim engeli veriyor. Ne yapacağımı bilmiyorum ve bu yüzden bu maili atma gereği duydum. Gereğinin yapılmasını saygılarımla arz ederim."",
+                ","SORUN: Havacılık ve Uzay Mühendisliği Bölümü doktora öğrencisi, 71 no'lu programda danışman değişikliği yaparken yanlışlıkla ""öğrenci onayı"" verdiğini; bu onayı kaldıramadığı için işlemlere devam edemediğini belirterek yardım talep etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, sistemdeki onayın geri alınabilmesi ve bilgilerin güncellenebilmesi için şu adımların izlenmesi gerektiğini bildirmiştir:
+
+Bölüm Onayının Kaldırılması: Öncelikle öğrencinin kendi bölümüyle iletişime geçmesi ve sistemdeki ""bölüm onayının"" kaldırılmasını talep etmesi gerekmektedir.
+
+Sistem Üzerinden Güncelleme: Bölüm onayı kaldırıldıktan sonra öğrenci, https://student.metu.edu.tr/ adresinden ""Tez Danışmanı Atama"" menüsüne girerek ilgili dönemi seçmeli ve tez bilgilerini güncellemelidir.
+
+Sürecin Yenilenmesi: Güncelleme yapıldıktan sonra tüm onayların (öğrenci, danışman, bölüm vb.) sırasıyla yeniden verilmesi gerektiği iletilmiştir.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""adaevcinn@gmail.com"",
+                ""timestamp"":""Thu, 16 Oct 2025 06:46:25 -0000"",
+                ""content"":""Merhaba,\nBen Ada Evcin 2717072 numaralı öğrenciyim.\nBu yıl mahkeme kararıyla ismim değişti. Microsoft teams hesabımda ismimi değiştiremiyorum eski ismim Saliha olarak gözüküyor derslere de katılamıyorum isim değiştirme seçeneği uygulamada yok. Yardımcı olabilirseniz sevinirim."",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr (Bilişim Destek Ekibi)"",
+                ""timestamp"":""Thu, 16 Oct 2025 06:55:08 -0000"",
+                ""content"":""Merhabalar, kullanıcıya bir önceki e-postasında METU mail adresiniz ile başvuru yapmanız gerekmektedir diye yazmıştık fakat tekrar gmail ile dönüş yapmış, yardımcı olabilir misiniz? Kolay gelsin."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Fri, 17 Oct 2025 13:34:17 -0000"",
+                ""content"":""Sayın Evcin,\n\n\""Talebiniz doğrultusunda Microsoft hesabınızın ismi güncellenmiş olup, Bilişim Destek uygulaması tarafından geri dönüş sağlanmıştır. Farklı kanallardan başvuru yapmanız sürecin karışıklık yaşanmasına neden olmaktadır. Lütfen taleplerinizi yalnızca tek bir kanaldan ve METU e-posta adresiniz üzerinden iletiniz.\""\n\nSaygılarımızla bilgilerinize sunarız."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Merhaba,\nBen Ada Evcin 2717072 numaralı öğrenciyim.\nBu yıl mahkeme kararıyla ismim değişti. Microsoft teams hesabımda ismimi değiştiremiyorum eski ismim Saliha olarak gözüküyor derslere de katılamıyorum isim değiştirme seçeneği uygulamada yok. Yardımcı olabilirseniz sevinirim."",
+                ","SORUN: ODTÜ öğrencisi Ada Evcin, mahkeme kararıyla isminin değiştiğini (eski adının Saliha olduğunu); ancak Microsoft Teams hesabında hala eski isminin göründüğünü ve uygulama üzerinden değişiklik yapamadığını belirterek yardım talep etmiştir. Kullanıcı ayrıca bu durum nedeniyle derslere katılamadığını ifade etmiş ve talebini kişisel e-posta adresi (Gmail) üzerinden iletmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, talep doğrultusunda kullanıcının Microsoft hesabındaki isim güncellemesini gerçekleştirmiştir.
+
+Bununla birlikte kullanıcıya şu uyarılar yapılmıştır:
+
+Daha önce belirtilmesine rağmen resmi ODTÜ e-posta adresi yerine Gmail üzerinden iletişim kurduğu hatırlatılmıştır.
+
+Farklı kanallardan mükerrer başvuru yapmanın süreçte karışıklığa neden olduğu belirtilmiştir.
+
+Bundan sonraki taleplerin yalnızca tek bir kanaldan ve ODTÜ e-posta adresi üzerinden iletilmesi gerektiği vurgulanmıştır.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""yilmaz.emir@metu.edu.tr"",
+                ""timestamp"":""Fri, 10 Oct 2025 08:05:46 -0000"",
+                ""content"":""İyi günler,\nBen 1. sınıf öğrencisiyim, hazırlıkta eski telefonumla meturoamı sorunsuz bir şekilde kullanıyordum. Ancak bu yaz telefon değiştirdim ve yeni telefonumla sayfadaki yönergelere uymama rağmen bağlanamıyorum. Bu konuda yardımcı olabilirseniz sevinirim.\nEmir Yılmaz-2725042"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Fri, 10 Oct 2025 08:10:07 -0000"",
+                ""content"":""Sayın Yılmaz,\n\nODTÜ kullanıcı kodu ve şifrenizle eduroam ağına bağlanabilirsiniz.\nhttps:\/\/faq.cc.metu.edu.tr\/tr\/groups\/eduroam adresindeki yönergeleri denemenize rağmen sorununuz devam ederse, cihazınız ile birlikte mesai saatleri içinde Bilgi İşlem B\/14 numaralı odaya gelebilirsiniz.\n\nSaygılarımızla bilgilerinize sunarız.\n\nSoru ve sorunlarınız için Bilişim Destek Ekibimize ODTÜ BİDB ana sayfasındaki “Bize Ulaşın” bağlantısından ve \""hotline at metu.edu.tr\"" e-posta adresinden ulaşabilirsiniz.\nSıkça Sorulan Sorular için \""https:\/\/faq.cc.metu.edu.tr\/tr\"" adresinden bilgi alabilirsiniz.\n\nODTÜ-BİDB HOTLINE SERVİSİ"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""İyi günler,\nBen 1. sınıf öğrencisiyim, hazırlıkta eski telefonumla meturoamı sorunsuz bir şekilde kullanıyordum. Ancak bu yaz telefon değiştirdim ve yeni telefonumla sayfadaki yönergelere uymama rağmen bağlanamıyorum. Bu konuda yardımcı olabilirseniz sevinirim.\nEmir Yılmaz-2725042"",
+                ","SORUN:
+
+sınıf öğrencisi Emir Yılmaz, telefon değişikliği yaptıktan sonra eski cihazında kullandığı kablosuz ağa (meturoam) yeni telefonunda bağlanamadığını; sayfadaki yönergeleri uygulamasına rağmen sorunun devam ettiğini belirterek yardım talep etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, ODTÜ kullanıcı kodu ve şifresi ile eduroam ağına bağlanılabileceğini hatırlatarak şu çözüm yollarını sunmuştur:
+
+Kullanıcının https://faq.cc.metu.edu.tr/tr/groups/eduroam adresinde yer alan bağlantı yönergelerini tekrar denemesi istenmiştir.
+
+Eğer sorun bu yönergelerle çözülmezse, kullanıcının cihazıyla birlikte mesai saatleri içerisinde Bilgi İşlem Daire Başkanlığı B-14 numaralı ofise gelerek fiziksel destek alabileceği belirtilmiştir.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""ipolatdemir@mems.metu.edu.tr"",
+                ""timestamp"":""Wed, 01 Oct 2025 05:06:42 -0000"",
+                ""content"":""Günaydınlar,\n\nBazı kullanıcılarımıza gönderdikleri mail, rica etsem ilgilenir misiniz? Bu aralar artmaya başladı bu tarz otalama tekniği.\n\nİyi çalışmalar,\n\nBilginize,\nİlker POLATDEMİR\nSistem Yöneticisi\nODTÜ MEMS Araştırma Merkezi"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Wed, 01 Oct 2025 06:35:29 -0000"",
+                ""content"":""Sayın Polatdemir,\n\nE-postanız ve bilgilendirmeniz için teşekkür ederiz.\n\nE-postayı başlık bilgileri ile (Full-Header) iletmeniz mümkün mü?\n\nhttps:\/\/faq.cc.metu.edu.tr\/tr\/sss\/gelen-e-posta-mesajinin-basliginin-tamamini-full-header-gormek-icin-ne-yapmaliyim \nweb sayfasından da destek alabilirsiniz.\n\nSaygılarımızla bilgilerinize sunarız.\n\nBilişim Destek Birimi"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Günaydınlar,\n\nBazı kullanıcılarımıza gönderdikleri mail, rica etsem ilgilenir misiniz? Bu aralar artmaya başladı bu tarz otalama tekniği.\n\nİyi çalışmalar,\n\nBilginize,\nİlker POLATDEMİR\nSistem Yöneticisi\nODTÜ MEMS Araştırma Merkezi"",
+                ","SORUN: ODTÜ MEMS Araştırma Merkezi Sistem Yöneticisi, kullanıcılarına gelen şüpheli bir e-postayı bildirmiş; son zamanlarda artış gösteren bu tür oltalama (phishing) saldırılarıyla ilgilenilmesini talep etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, bildirim için teşekkür etmiş ancak teknik incelemenin sağlıklı yapılabilmesi için söz konusu e-postanın başlık bilgilerinin tamamıyla (Full-Header) birlikte iletilmesini istemiştir. Bu işlemin nasıl yapılacağına dair https://faq.cc.metu.edu.tr/tr/sss/gelen-e-posta-mesajinin-basliginin-tamamini-full-header-gormek-icin-ne-yapmaliyim adresindeki yardım sayfası kullanıcıyla paylaşılmıştır.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""sinem.erdogdu@metu.edu.tr"",
+                ""timestamp"":""Wed, 01 Oct 2025 09:15:48 -0000"",
+                ""content"":""Hocam merhaba,\n\nBilgisayarıma format atıp orjinal windows kurdum. Microsoft office 365 yükledim ama e138379@metu.edu.tr mail adresimi kabul etmiyor. Sifremi hatırlamıyorum, yeni sifreyi de admin olmadan olusturamıyorum.\n\nYardımcı olabilir misiniz? Tezime devam edebilmek icin microsoft ofis programlarına ihtiyacım var.\n\nTesekkurler\nSinem Erdogdu"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Wed, 01 Oct 2025 09:16:41 -0000"",
+                ""content"":""Merhabalar, yardımcı olabilir misiniz? Kolay gelsin."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr (BİDB Bilişim Destek Servisi (Hotline))"",
+                ""timestamp"":""Wed, 01 Oct 2025 10:49:41 -0000"",
+                ""content"":""Sinem Erdoğdu,\n\nYeni altyapı kapsamında hesabınıza erişim için tanımlanan geçici şifreniz aşağıdadır.\n\nGeçici şifrenizi değiştirip oluşturduğunuz yeni şifre ile Microsoft hizmetlerine erişim sağlayabilirsiniz.\n\nNot: Geçici şifrenin kısa bir süre içerisinde değiştirilmesi gerekmektedir aksi taktirde expire olarak kullanım dışı kalmaktadır.\n\nUsername: e138379 at metu.edu.tr\n\nTemporary password: G(629186482818ox\n\nURL>> https:\/\/www.microsoft365.com\/\n\nDaha fazla bilgi için https:\/\/faq.cc.metu.edu.tr\/tr\/microsoft365 adresini ziyaret ediniz.\n\nEski Altyapı: Microsoft ile ilgili geçtiğimiz aylarda yapılan altyapı çalışması kapsamında eski altyapımız yeni bir altyapıya taşındı. Bu kapsamda olası veri kayıplarının önüne geçmek için eski altyapıda bulunan ve \""e138379 at metu2.metu.edu.tr\"" hesabı ile erişebildiğiniz OneDrive veya benzeri verilerinizi harici bir depolama alanına yedeklemenizi ve bu alanı boşaltmanız gerekmektedir. Microsoft tarafından küresel ölçekli politika değişikliği doğrultusunda Microsoft Office 365 kullanıcılarına kurumsal depolama alanı dahilinde sunulan OneDrive depolama alanı artık olmayacaktır. Bir süre sonra geçici olarak açık tutulan bu eski altyapı üzerindeki eski verilerinize erişmede sorunlar yaşanabilir.\n\nEski Altyapı: \""e138379 at metu2.metu.edu.tr\"" adresi ile eski hesap şifrenizi kullanarak eski verilerinize ve Microsoft hizmetlerine geçici olarak erişebilirsiniz.\n\nBilgisayarınızda bulunan eski altyapı hesabı yerine yeni altyapı hesabınızı kullanmak için öncelikle bilgisayarınızda kullandığınız bütün Microsoft uygulamalarından (Teams, Office, Store, Outlook ..vb) logout olup yeni altyapı hesabınız ile tekrar giriş yapmayı deneyiniz.\n\nDaha sonra probleminiz devam ederse sorununuzun çözümü için aşağıdaki işlemleri uyguladığınızdan emin olunuz.\n\nFor Windows;\n1. Press windows key + R to open the Run, Type %localappdata%\/Microsoft and Enter.\n2. Delete OneAuth and IdentityCache folder from there.\n3. Open credential manager and click on the click on windows credentials.\n4. Delete all the generic credentials related to Office 365.\n5. Open Registry editor and follow the path HKEY_CURRENT_USER\\Software\\Microsoft\\Office<16.0>\\Common\\Identity.\n6. Delete the identity folder.\n7. Restart the computer and try to log into the apps.\n\nFor macOS;\n\nFor MAC users, delete the Office suite and install it again. If it does not work, use the following steps to delete the cache.\n\nMethod 1:\n1. Open Finder and press Shift + Command + G to open the Go to folder window.\n2. Type \/Library\/Containers\/\/com.Microsoft.OsfWebHost\/Data\/ and press Go.\n3. Select all files in this folder and delete them.\n\nMethod 2:\n1. Using terminal type the following command rm -rf \/Library\/Containers\/com.Microsoft.OsfWebHost\/Data\/* and press enter\n\nMethod3:\nKey Chain Access uygulamasında aşağıdaki anahtar kelimeleri aratın ve karşınıza çıkan bilgileri silin (sertifikalar hariç).\n\nADAL\nOffice\nTeams\nMicrosoft\n\nBu işlemlerin ardından bilgisayarınızı yeniden başlatın ve Microsoft uygulamalarında yeni altyapı hesabınız ile oturum açmayı deneyiniz.\n\nBilgilerinize."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Hocam merhaba,\n\nBilgisayarıma format atıp orjinal windows kurdum. Microsoft office 365 yükledim ama e138379@metu.edu.tr mail adresimi kabul etmiyor. Sifremi hatırlamıyorum, yeni sifreyi de admin olmadan olusturamıyorum.\n\nYardımcı olabilir misiniz? Tezime devam edebilmek icin microsoft ofis programlarına ihtiyacım var.\n\nTesekkurler\nSinem Erdogdu"",
+                ","SORUN: Kullanıcı, bilgisayarına format atıp Windows ve Office 365 kurduktan sonra e138379@metu.edu.tr uzantılı hesabı ile giriş yapamadığını, şifresini hatırlamadığını ve yönetici yetkisi olmadığı için yeni şifre oluşturamadığını belirtmiştir. Tez çalışmaları için acil olarak Microsoft Office erişimine ihtiyacı olduğunu ifade etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, kullanıcıya yeni altyapı kapsamında sisteme giriş yapabilmesi için geçici bir şifre tanımlamış ve bu şifreyi https://www.microsoft365.com/ adresi üzerinden ivedilikle değiştirmesi gerektiğini bildirmiştir.
+
+Ayrıca çözüm sürecine dair şu detaylar paylaşılmıştır:
+
+Altyapı ve Yedekleme: Eski altyapıdaki verilerin (metu2.metu.edu.tr hesabındaki) OneDrive kotası kalkacağı için harici bir alana yedeklenmesi gerektiği hatırlatılmıştır.
+
+Teknik Sorun Giderme: Şifre değişimine rağmen giriş sorunu yaşanması durumunda uygulanacak önbellek temizliği adımları (Windows için OneAuth ve IdentityCache klasörlerinin silinmesi, Kayıt Defteri ve Kimlik Bilgileri Yöneticisi temizliği; macOS için Keychain ve Cache temizliği) detaylıca iletilmiştir.
+
+Bilgi Kaynağı: Konuyla ilgili daha fazla bilgi için https://faq.cc.metu.edu.tr/tr/microsoft365 adresi referans gösterilmiştir.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""nyavuz@metu.edu.tr"",
+                ""timestamp"":""Fri, 03 Oct 2025 07:44:51 -0000"",
+                ""content"":""Sayın İlgili,\n\nHordeden email yazarken otomatik spell-check yapıyor, anladığım kadarıyla İngilizceye göre ayarlanmış, bu yüzden Türkçe kelimelerin altını kırmızı yapıyor. Bunu Türkçeye göre ayarlamak istiyorum. Nereden değiştirildiğini bulamadım. Yardımcı olur musunuz?\n\nTeşekkürler.\n\nDoç. Dr. Nilay Yavuz\nDekan Yardımcısı\nİİBF, ODTÜ"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Fri, 03 Oct 2025 07:57:57 -0000"",
+                ""content"":""Merhabalar ,yardımcı olabilir misiniz ? Kolay gelsin ."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""leventb at metu.edu.tr (Levent BAYRAM)"",
+                ""timestamp"":""Fri, 03 Oct 2025 10:55:35 -0000"",
+                ""content"":""merhaba,\n\nBilgimiz dahilinde horde uygulamasının böyle bir özelliği yok. SYG bilbilir belki varsa...\n\nEğer YOKsa, kullanıcıya aşağıdaki bilgiyi iletebilirsiniz.\n\nHORDE web eposta uygulamasında yazım denetimi özelliği bulunmamaktadır. Ancak kullandığınız tarayıcı özelinde yazım denetimi açık olabilir. Google Chrome için https:\/\/support.google.com\/chrome\/answer\/12027911?hl=tr adresinden bilgi alabilirsiniz."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Fri, 03 Oct 2025 13:52:19 -0000"",
+                ""content"":""Merhabalar,\n\nSize de sormamız istenmiş.\n\nTeşekkür eder, İyi çalışmalar dileriz."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""okosar at metu.edu.tr (Onur KOŞEAR)"",
+                ""timestamp"":""Fri, 03 Oct 2025 14:29:19 -0000"",
+                ""content"":""Merhaba,\n\n\""Seçenekler -> Posta -> Oluşturma -> ileti Oluşturma -> İleti göndermeden önce yazım denetimi uygulansın mı?\"" seçilerek denetim uygulanıyor görünüyor varsayılan yüklü ingilizce olmalı.\n\nKullanıcının buradaki seçenek kısmı seçili olmalı.\n\nKullanıcıya buradaki seçimi kaldırmasını önerebiliriz.\n\nHorde'un kullandığımız sürümüne TR denetim özelliğinin eklenmesi zor görünüyor.\n\nKullanıcıya TR denetim desteği olmadığı, ENG denetimi kaldırması önerilebilir.\n\niyi çalışmalar.\n\nOnur"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Fri, 03 Oct 2025 14:36:56 -0000"",
+                ""content"":""Sayın Yavuz,\n\nSeçenekler -> Posta -> Oluşturma -> ileti Oluşturma -> İleti göndermeden önce yazım denetimi uygulansın mı?\"" seçilerek denetim uygulanıyor görünüyor varsayılan yüklü ingilizce olmalı.\n\nBuradaki seçenek kısmı seçiliyse buradaki seçimi kaldırmalısınız.\n\nHorde'un kullandığımız sürümüne Türkçe dil denetim desteği bulunmamaktadır.\n\nGoogle Chrome için https:\/\/support.google.com\/chrome\/answer\/12027911?hl=tr adresinden bilgi alabilirsiniz.\n\nSaygılarımızla.\n\nBilişim Destek Ekibi"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Sayın İlgili,\n\nHordeden email yazarken otomatik spell-check yapıyor, anladığım kadarıyla İngilizceye göre ayarlanmış, bu yüzden Türkçe kelimelerin altını kırmızı yapıyor. Bunu Türkçeye göre ayarlamak istiyorum. Nereden değiştirildiğini bulamadım. Yardımcı olur musunuz?\n\nTeşekkürler.\n\nDoç. Dr. Nilay Yavuz\nDekan Yardımcısı\nİİBF, ODTÜ"",
+                ","SORUN: İİBF Dekan Yardımcısı, Horde web posta arayüzünde e-posta yazarken sistemin otomatik olarak İngilizce imla denetimi (spell-check) yaptığını ve Türkçe kelimeleri hatalı olarak işaretlediğini belirtmiştir. Kullanıcı, bu ayarı Türkçeye çevirmek istediğini ancak ilgili menüyü bulamadığını belirterek yardım talep etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, teknik inceleme sonucunda kullanılan Horde sürümünde Türkçe dil denetimi desteğinin bulunmadığını belirterek şu çözüm önerilerini sunmuştur:
+
+Horde Ayarı: Mevcut İngilizce denetimin rahatsızlık vermemesi için kapatılması önerilmiştir. İzlenmesi gereken yol: Seçenekler -> Posta -> Oluşturma -> İleti Oluşturma -> ""İleti göndermeden önce yazım denetimi uygulansın mı?"" kutucuğundaki işaretin kaldırılması.
+
+Alternatif Çözüm: Yazım denetimi ihtiyacı için web tarayıcısının (Google Chrome vb.) kendi özelliğinin kullanılabileceği belirtilmiş ve ilgili destek sayfası paylaşılmıştır.",,Train,
+" {
+                ""role"":""user"",
+                ""name"":""kaya.mehmet@metu.edu.tr"",
+                ""timestamp"":""Mon, 06 Oct 2025 09:02:49 -0000"",
+                ""content"":""Merhabalar, ismim Mehmet Kaya, öğrenci numaram 2367050. 2024 Fall döneminde lisanstan mezun oldum ve metu mailim kapanacağından dolayı kişisel mail adresime yönlendirmiştim gelen iletileri. Bugün hotline ile iletişime geçtiğimde yönlendirme iznini iptal ettik. Ancak bu zamana kadarki maillerimin bazılarını görüntüleyemiyorum. kaya.mehmet at metu.edu.tr ya da e236705 at metu.edu.tr adresine 22.09.2025 ve 06.10.2025 tarihleri arasında gönderilen mailleri METU mail adresime yönlendirilmesi konusunda desteklerinizi rica ediyorum.\n\nİyi çalışmalar dilerim."",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Mon, 06 Oct 2025 10:38:40 -0000"",
+                ""content"":""Merhaba yardımcı olabilirmisiniz."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 11:15:24 -0000"",
+                ""content"":""Merhaba,\n\nAşağıdaki konu hakkında bir gelişme oldu mu?\n\nYardımcı olabilir misiniz?\n\nTeşekkürler, iyi çalışmalar."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""adiyaman at metu.edu.tr"",
+                ""timestamp"":""Fri, 10 Oct 2025 05:57:04 -0000"",
+                ""content"":""Merhaba,\n\nMezun yönlendirmesi olan hesaplarda e-postalar yönlendirme yapılan hesaba iletiliyor, kullanıcı özelinde \""mehmettkaya.0606 at gmail.com\"" adresine yönlendirme yapılmış, bu adresi kontrol etmesini önerebiliriz.\n\nİyi çalışmalar,\n\nUğur Adıyaman"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Fri, 10 Oct 2025 06:06:27 -0000"",
+                ""content"":""Sayın Kaya,\n\nMezun yönlendirmesi olan hesaplarda e-postalar yönlendirme yapılan hesaba iletiliyor, sizin de \""mehmettkaya.0606 at gmail.com\"" adresine yönlendirme yapılmış, bu adresi kontrol etmenizi öneririz.\n\nSagılarımızla bilgilerinize sunarız.\n\nBilişim Destek Birimi"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Merhabalar, ismim Mehmet Kaya, öğrenci numaram 2367050. 2024 Fall döneminde lisanstan mezun oldum ve metu mailim kapanacağından dolayı kişisel mail adresime yönlendirmiştim gelen iletileri. Bugün hotline ile iletişime geçtiğimde yönlendirme iznini iptal ettik. Ancak bu zamana kadarki maillerimin bazılarını görüntüleyemiyorum. kaya.mehmet at metu.edu.tr ya da e236705 at metu.edu.tr adresine 22.09.2025 ve 06.10.2025 tarihleri arasında gönderilen mailleri METU mail adresime yönlendirilmesi konusunda desteklerinizi rica ediyorum.\n\nİyi çalışmalar dilerim."",
+               ","SORUN: 2024 Sonbahar döneminde mezun olan Mehmet Kaya, mezuniyet nedeniyle ODTÜ e-posta hesabını kişisel adresine yönlendirdiğini, daha sonra bu yönlendirmeyi iptal ettiğini belirtmiştir. Ancak 22.09.2025 - 06.10.2025 tarihleri arasında kaya.mehmet@metu.edu.tr adresine gelen e-postaları görüntüleyemediğini ifade ederek; bu iletilerin tekrar ODTÜ e-posta kutusuna yönlendirilmesini talep etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, mezun yönlendirmesi tanımlı hesaplarda e-postaların doğrudan hedef adrese iletildiğini belirtmiştir. Yapılan kontrolde kullanıcının e-postalarının mehmettkaya.0606@gmail.com adresine yönlendirildiği tespit edilmiş ve eksik olduğu düşünülen iletiler için bu Gmail adresinin kontrol edilmesi önerilmiştir.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""dincerc at metu.edu.tr"",
+                ""timestamp"":""Mon, 06 Oct 2025 13:28:45 -0000"",
+                ""content"":""Merhabalar;\n\nEğitim Fakültesi Temel Eğitim Bölümüne, 89 günlük yurt içi kısa süreli görevlendirme ile (1 dönemliğine) araştırma görevlisi olarak Ayten Kurşun görevlendirilmiştir. Araştırma görevlimizin; ders bilgilerini işleyebilmesi ve öğrencilerinin odtü classa yükledikleri ödevlerini inceleyebilmesi için odtü class girişi yapması gerekmektedir.\n\nKısa süreli görevlendirmelerde üniversitemiz sicil numarası vermemekte, sicil numarası olmadığı için de odtü class tanımlaması yapılamamaktadır.\n\nAraştırma görevlimize ders takibini sağlayabilmesi için; sicil numarası olmadan, geçici süre ile kullanıcı kodu tanımlanması mümkün müdür?\n\nYardım ve desteklerinizi bekliyoruz. Şimdiden teşekkür eder, iyi çalışmalar dilerim.\n\nCansu DİNÇER\nTemel Eğitim Bölüm Sekreterliği\n4054"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Tue, 07 Oct 2025 09:02:02 -0000"",
+                ""content"":""Sayın Dinçer;\n\nÜniversitemizde ders verebilmek odtüclass a ve metusis sistemlerine girebilmek için Üniversitemiz personel sicil numarasının bulunması gerekmektedir.\n\nodtuclass sistemi özelinde sadece ödev inceleyip, ders bilgilerinin işlenebilmesi için sicil numarası ve  kullanıcı hesabı olmaksızın bir yöntem olup olmadığını odtuclass at metu.edu.tr  ve UZEM\n\nhttps:\/\/odtuzem.metu.edu.tr\/tr\/iletisim  (ODTÜ Uzaktan Eğitim Uygulama ve Araştırma Merkezi)  adresleri ile iletişime geçerek öğrenebilirsiniz.\n\nSaygılarımızla bilgilerinize sunarız.\n\nBilişim Destek Ekibi"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Merhabalar;\n\nEğitim Fakültesi Temel Eğitim Bölümüne, 89 günlük yurt içi kısa süreli görevlendirme ile (1 dönemliğine) araştırma görevlisi olarak Ayten Kurşun görevlendirilmiştir. Araştırma görevlimizin; ders bilgilerini işleyebilmesi ve öğrencilerinin odtü classa yükledikleri ödevlerini inceleyebilmesi için odtü class girişi yapması gerekmektedir.\n\nKısa süreli görevlendirmelerde üniversitemiz sicil numarası vermemekte, sicil numarası olmadığı için de odtü class tanımlaması yapılamamaktadır.\n\nAraştırma görevlimize ders takibini sağlayabilmesi için; sicil numarası olmadan, geçici süre ile kullanıcı kodu tanımlanması mümkün müdür?\n\nYardım ve desteklerinizi bekliyoruz. Şimdiden teşekkür eder, iyi çalışmalar dilerim.\n\nCansu DİNÇER\nTemel Eğitim Bölüm Sekreterliği\n4054"",
+                ","SORUN: Eğitim Fakültesi Temel Eğitim Bölümü Sekreterliği, 89 günlük kısa süreli görevlendirme ile gelen Araştırma Görevlisi Ayten Kurşun'un, üniversite tarafından sicil numarası verilmediği için ODTÜClass sistemine giremediğini belirtmiştir. Görevlinin ders takibi ve ödev kontrolü yapabilmesi adına, sicil numarası olmaksızın geçici bir kullanıcı kodu tanımlanıp tanımlanamayacağı sorulmuştur.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, üniversite sistemlerinde (ODTÜClass, Metusis) işlem yapabilmek için personel sicil numarasının bulunmasının genel kural olduğunu belirtmiştir. Ancak, sicil numarası ve kullanıcı hesabı olmadan sadece ödev inceleme gibi işlemler için sistemsel bir alternatif yöntem olup olmadığının öğrenilmesi adına; kullanıcının odtuclass@metu.edu.tr adresi veya UZEM (ODTÜ Uzaktan Eğitim Uygulama ve Araştırma Merkezi) ile doğrudan iletişime geçmesi önerilmiştir.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""onur.ucanok@metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 07:50:01 -0000"",
+                ""content"":""Merhaba,\n\nYeni danışman ataması yaptığım için OIBS sitemindeki tez bilgilerimden bazılarına değişiklikler yapmam gerekiyor, fakat OIBS sistemi üzerinden bu değişiklikleri yapamadım.\n\nBunu başka bir yerden mi değiştirebiliyorduk, yoksa registration dönemine kısıtlı bir değişim süresi mi var ?\n\nEğer süresi dolduysa, sizin tarafınızdan bunu açılabiliyor musunuz, yoksa dekanlık\/rektörlüğe bir dilekçe yazarak mı devam etmem gerekiyor ?\n\nŞimdiden yardımınız için teşekkür ederim.\n\nOnur"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 07:53:30 -0000"",
+                ""content"":""Merhabalar, yardımcı olabilir misiniz? Kolay gelsin."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""altinova@metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 08:10:00 -0000"",
+                ""content"":""Merhaba,\n\nÖğrencimiz OIBS sistemi ile giriş yapmaya çalıştığını söylüyor,\n\nhttps:\/\/student.metu.edu.tr\/ den giriş yapabiliyor.\n\nNot: Öğrenci numarası yazılmamış. Yukarıda yazılan 2322337 öğrenci \nnumarası için verilmiş cevaptır.\n\nİyi çalışmalar dilerim."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 11:27:03 -0000"",
+                ""content"":""Sayın Uçanok,\n\n71 nolu programa Öğrenci Portal'ine giriş yaptıktan sonra menüden Tez Danışmanı Atama linkini seçerek (https:\/\/student.metu.edu.tr\/) döneminizi seçip giriş yaptıktan sonra, master \/ doktora tezinizle ilgili bilgilerin göründüğü ekrandan tez bilgilerini değiştirebilirsiniz. Ancak bunun öncesinde bölümünüzle iletişime geçerek, bilgilerinizde güncelleme yapabilmesi için bölüm onayını kaldırmalarını istemeniz gerekmektedir. Sonrasında tüm onayların yeniden tamamlanması gerekmektedir.\n\nSaygılarımızla bilgilerinize sunarız."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""onur.ucanok at metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 12:38:46 -0000"",
+                ""content"":""Merhaba,\n\nHızlı cevabınız için teşekkür ederim.\n\nYönlendirdiğiniz yerde tezin başlığını ve özünü değiştirebiliyorum,  \nfakat \""Alan\"" kutucuğunu değiştiremiyorum.\n\nAcaba bunu da değiştirmenin\/dilekçe ile değiştirilmesinin bir yolu var  \nmı ? Kiminle iletişime geçmem gerekir bunun için ?\n\nTekrardan teşekkürler, iyi günler.\n\nOnur"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Thu, 09 Oct 2025 12:40:05 -0000"",
+                ""content"":""Merhabalar;\n\nAşağıdaki konu hakkında yardımcı olabilir misiniz?\n\nTeşekkür eder, İyi çalışmalar dileriz."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Fri, 10 Oct 2025 07:41:08 -0000"",
+                ""content"":""Merhaba,\n\nÖğrencimiz ofise geldi, aşağıdaki konu hakkında bir gelişme oldu mu ?\n\nYardımcı olabilir misiniz?\n\nTeşekkürler, iyi çalışmalar."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""cengizt at metu.edu.tr"",
+                ""timestamp"":""Fri, 10 Oct 2025 08:51:36 -0000"",
+                ""content"":""Merhaba,\n\nOgrenciler 71 nolu programda tez basligina ait alan bilgisini tez  basligi guncelleme sayfasinda yapabilmektedir.\n2322337 nolu ogrencinin 71 nolu programda Enstitu ve Bolum onaylari  bulunmaktadir. Tez alanini guncelleyebilmesi icin enstitu ve bolum  onaylarinin kaldirilmasi gerekiyor.\n\nBu islemlerden sonra ogrenci 71 nolu programdan 'UPDATE TITLE'  butonuna basarak ekrana gelen sayfadaki 'Thesis Field'  baslikli kutucukdan tezina ait alan bilgisini degistirebilir.\n\nTez alani onaylandiktan sonra tezine ait tum onaylarini tekrar almalidir.\n\nIyi calismalar dilerim."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""cengizt@metu.edu.tr"",
+                ""timestamp"":""Fri, 10 Oct 2025 08:53:24 -0000"",
+                ""content"":""Merhaba,\n\nBu konuya cevap verildi.\n\nIyi calismalar dilerim."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Merhaba,\n\nYeni danışman ataması yaptığım için OIBS sitemindeki tez bilgilerimden bazılarına değişiklikler yapmam gerekiyor, fakat OIBS sistemi üzerinden bu değişiklikleri yapamadım.\n\nBunu başka bir yerden mi değiştirebiliyorduk, yoksa registration dönemine kısıtlı bir değişim süresi mi var ?\n\nEğer süresi dolduysa, sizin tarafınızdan bunu açılabiliyor musunuz, yoksa dekanlık\/rektörlüğe bir dilekçe yazarak mı devam etmem gerekiyor ?\n\nŞimdiden yardımınız için teşekkür ederim.\n\nOnur"",
+               ","SORUN: Öğrenci Onur Uçanok, danışman değişikliği nedeniyle tez bilgilerini güncellemek istemektedir. İlk aşamada OIBS üzerinden işlem yapamadığını belirtmiş; student.metu.edu.tr adresine yönlendirildikten sonra ise tezin başlığını ve özünü değiştirebildiğini ancak ""Alan"" (Thesis Field) kutucuğunu değiştiremediğini belirterek bu işlemin nasıl yapılacağı konusunda destek talep etmiştir.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi ve ilgili teknik birim (ÖİDB Yazılım Grubu), öğrencinin sistemde Enstitü ve Bölüm onaylarının bulunduğunu, bu onaylar kilitli olduğu için değişiklik yapamadığını tespit etmiştir.
+
+Çözüm adımları şu şekilde iletilmiştir:
+
+Tez alanının güncellenebilmesi için öncelikle mevcut Enstitü ve Bölüm onaylarının kaldırılması gerekmektedir.
+
+Onaylar kaldırıldıktan sonra öğrenci, 71 no'lu programa girip 'UPDATE TITLE' butonuna basarak açılan sayfadaki 'Thesis Field' kutucuğundan alan bilgisini değiştirebilir.
+
+Değişiklik yapıldıktan sonra teze ait tüm onay sürecinin (öğrenci, danışman vb.) yeniden tamamlanması gerekmektedir.",,Train,
+"            {
+                ""role"":""user"",
+                ""name"":""tanyer@metu.edu.tr"",
+                ""timestamp"":""Wed, 01 Oct 2025 15:09:24 -0000"",
+                ""content"":""Merhaba,\n\nODTÜ'nün sağladığı VPN ile \""Ms Phd Advisor Assignment\"" programını \nkullanamıyorum. \""**You are not authorized to use this program.\"" mesajı \nalıyorum.\n\nBunun sebebi ne olabilir? Kampüs dışında bu program kullanılamıyor mu?\n\nTeşekkürler,"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Wed, 01 Oct 2025 17:40:59 -0000"",
+                ""content"":""Sayın Tanyer;\n\nEnstitu bölüm ve öğretim elemanlarının lisansüstü öğrencilerin tez işlemlerine ait güncellemeleri yaptığı OIBS sistemindeki Ms Phd Advisor Assignment 71.0 nolu program METUSIS'e taşınmıştır.\n\nÖğrenci İşleri Daire Başkanlığı ve Enstitü Müdürlüklerine konu hakkında bilgi verilmiştir.\n\nKullanıcılar programa METUSIS'te Yetkili Süreçler -> Öğrenci Yönetimi -> Tez Danışmanı İşlemleri linkinden erişebilecekler.\n\nLisansüstü öğrenciler ise programı yeni arayüzü ile Öğrenci Portal'inden kullanmaya devam edeceklerdir.\n\nSaygılarımızla bilgilerinize sunarız.\n\nBilişim Destek Ekibi"",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }","""Merhaba,\n\nODTÜ'nün sağladığı VPN ile \""Ms Phd Advisor Assignment\"" programını \nkullanamıyorum. \""**You are not authorized to use this program.\"" mesajı \nalıyorum.\n\nBunun sebebi ne olabilir? Kampüs dışında bu program kullanılamıyor mu?\n\nTeşekkürler,"",
+                ","SORUN: Kullanıcı, ODTÜ VPN bağlantısı ile ""Ms Phd Advisor Assignment"" programını kullanmaya çalışırken ""You are not authorized to use this program."" (Bu programı kullanmaya yetkili değilsiniz) hatası aldığını belirtmiş ve sorunun kampüs dışı erişimden kaynaklanıp kaynaklanmadığını sormuştur.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, sorunun VPN bağlantısıyla ilgili olmadığını; OIBS sistemindeki 71.0 nolu ""Ms Phd Advisor Assignment"" programının METUSIS sistemine taşındığını bildirmiştir.
+
+Erişim için yeni yol şu şekilde tarif edilmiştir:
+
+Akademik Personel/Yetkililer İçin: METUSIS -> Yetkili Süreçler -> Öğrenci Yönetimi -> Tez Danışmanı İşlemleri.
+
+Lisansüstü Öğrenciler İçin: Programın yeni arayüzü ile Öğrenci Portalı üzerinden erişime devam edileceği belirtilmiştir.",,Train,
+"{
+                ""role"":""user"",
+                ""name"":""ayseguls@metu.edu.tr"",
+                ""timestamp"":""Mon, 22 Sep 2025 11:02:05 -0000"",
+                ""content"":""Merhaba,\n\nBen Ayşegül Sarı, Şehir ve Bölge Planlama Bölümünde araştırma görevlisiyim ve web sitesinden sorumluyum. Web sitemizde kişisel sayfalar üzerinde biyografi gibi uzun cümleler veya paragraflar fotoğraflar ile yan yana gelince aralarında hiç boşluk kalmıyor (bir örnek görsel ilettim). Örnek sayfa: https:\/\/crp.metu.edu.tr\/en\/dora-almassy-assist-prof-dr\n\nBu durumda nasıl bir çözüm uygulanabilir? Aralarında fotoğrafın hemen altındaki gibi bir mesafeyi satırda da nasıl koruyabiliriz? Ben de öğrenirsem iyi olur.\n\nYanıtınız için şimdiden teşekkürler.\nKolaylıklar,\n\nAyşegül"",
+                ""metadata"":{
+                    ""type"":""Original""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline at metu.edu.tr"",
+                ""timestamp"":""Mon, 22 Sep 2025 11:02:51 -0000"",
+                ""content"":""Merhabalar;\n\nAşağıdaki konu ile ilgili olarak yardımcı olabilir misiniz?\n\nTeşekkür eder, İyi çalışmalar dileriz."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            },
+            {
+                ""role"":""user"",
+                ""name"":""hotline@metu.edu.tr"",
+                ""timestamp"":""Mon, 22 Sep 2025 11:41:56 -0000"",
+                ""content"":""Sayın Sarı,\n\nSayfanın mevcut hali ile sadece görselin sol tarafına boşluk eklemek isterseniz CSS margin özelliğini kullanabilirsiniz. Aşağıdaki CSS tanımı görsele (img) stil olarak eklendiğinde sol tarafta da boşluk oluşacaktır:\n\nmargin-left: 15px;\n\nDrupal metin editörünün sağladığı özelliklerle de bu işlemi yapabilirsiniz. Kullandığınız Drupal sürümü için hazırladığımız yardım videolarından \""14- Köprü Oluşturma ve Görsel Ekleme\"" isimli videonun ikinci kısmında bunun nasıl yapıldığı anlatılmaktadır. Videoda anlatılanları uygulamadan önce lütfen görseli, hangi paragrafın yanında görüntülenmesini istiyorsanız onun altına taşıyın ya da silip yeniden ekleyin. Yardım videoları sayfasına aşağıdaki linkten ulaşabilirsiniz:\n\nhttps:\/\/miys.metu.edu.tr\/tr\/drupal-75-yardim-videolari\n\n---\n\nSaygılarımızla bilgilerinize sunarız."",
+                ""metadata"":{
+                    ""type"":""Reply""
+                }
+            }","""Merhaba,\n\nBen Ayşegül Sarı, Şehir ve Bölge Planlama Bölümünde araştırma görevlisiyim ve web sitesinden sorumluyum. Web sitemizde kişisel sayfalar üzerinde biyografi gibi uzun cümleler veya paragraflar fotoğraflar ile yan yana gelince aralarında hiç boşluk kalmıyor (bir örnek görsel ilettim). Örnek sayfa: https:\/\/crp.metu.edu.tr\/en\/dora-almassy-assist-prof-dr\n\nBu durumda nasıl bir çözüm uygulanabilir? Aralarında fotoğrafın hemen altındaki gibi bir mesafeyi satırda da nasıl koruyabiliriz? Ben de öğrenirsem iyi olur.\n\nYanıtınız için şimdiden teşekkürler.\nKolaylıklar,\n\nAyşegül"",
+                ","SORUN: Şehir ve Bölge Planlama Bölümü web sitesi sorumlusu Araştırma Görevlisi, sitedeki kişisel sayfalarda uzun metinler (biyografi vb.) ile fotoğraflar yan yana geldiğinde aralarında hiç boşluk kalmadığını ve metnin görsele yapışık durduğunu belirtmiştir. Bu görüntü bozukluğunu gidermek ve metinle görsel arasına mesafe koymak için nasıl bir işlem yapılması gerektiğini sormuştur.
+
+CEVAP / DÖNÜŞ: Bilişim Destek Ekibi, sorunun çözümü için iki farklı yöntem önermiştir:
+
+CSS ile Müdahale: Görselin koduna margin-left: 15px; stil özelliğinin eklenerek sol taraftan boşluk bırakılabileceği belirtilmiştir.
+
+Drupal Editör Kullanımı: Kod kullanmadan, Drupal metin editörü araçlarıyla da bu işlemin yapılabileceği ifade edilmiştir. Kullanıcı, bu işlemin detaylı anlatımı için https://miys.metu.edu.tr/tr/drupal-75-yardim-videolari adresindeki ""14- Köprü Oluşturma ve Görsel Ekleme"" videosuna yönlendirilmiştir.
+
+Önemli Not: Videodaki adımları uygulamadan önce görselin, hizalanmak istenen paragrafın altına taşınması veya silinip tekrar eklenmesi gerektiği hatırlatılmıştır.",,Train,

@@ -1,0 +1,193 @@
+question,response
+"Konu: Kampüs dışından SSH bağlantısı kuramıyorum\n\nMerhaba,\n\nKullanıcı adım: dcelikel\n\nCisco Secure Client (border.metu.edu.tr) üzerinden VPN bağlantısı kurabiliyorum, ancak orca.metu.edu.tr veya external.cc.metu.edu.tr sunucularına SSH ile bağlanırken \""Connection timed out\"" hatası alıyorum.\n\nGerekli yönlendirmeyi veya profil güncellemesini sağlayabilir misiniz?\n\nTeşekkürler,\n\nDeniz Çelikel\n\nMETU \nDepartment of Statistics\nPart-Time Instructor\n+90 (536) 292 8222"",
+                ","Kampüs dışından SSH bağlantısı sorunuyla ilgili olarak aşağıdaki adımları izleyebilirsiniz:
+
+1. ODTÜ Bilişim Destek Sistemi'ne (Hot-line) başvurun. Bu sistem, teknik sorunlarınızı çözmek için en uygun kaynaktır.
+
+2. Başvurunuzda, VPN bağlantısı kurabildiğinizi ancak SSH bağlantısında sorun yaşadığınızı detaylı bir şekilde açıklayın.
+
+3. Kullanıcı adınızı ve yaşadığınız spesifik hatayı (""Connection timed out"") belirtin.
+
+4. Gerekirse, destek ekibi size profil güncellemesi veya ek yönlendirmeler sağlayabilir.
+
+5. Ayrıca, hotline@metu.edu.tr adresine METU uzantılı kurumsal e-posta adresinizden şu bilgileri içeren detaylı bir e-posta göndermeniz önerilir:
+   - Kullanıcı adınız
+   - İşletim sistemi ve cihaz tipi (PC, tablet, telefon vb.)
+   - Cisco Secure Client'ın Diagnostics sekmesindeki Connection Log ekranı sonuçları
+   - Connection Details sekmesindeki hata metinleri
+
+Bu şekilde, sorununuza özel ve doğru bir çözüm bulmanız daha olası olacaktır."
+"""Sayın Yetkili,\n\nDişli, Güç Aktarma Sistemleri ve Titreşim Uygulama ve Araştırma Merkezi (DİMER) bünyesinde veri depolama ve paylaşım süreçlerini düzenlemek amacıyla NAS HDD tabanlı bir depolama ağı oluşturmak istiyoruz.\n\nBu konuda uygun sistem altyapısının kurulumu, ağ bağlantısı ve erişim yetkilendirmeleri hususunda biriminizden teknik destek talep etmekteyiz.\n\nGerekli yönlendirmeleri veya sürecin başlatılması için izlememiz gereken adımlar konusunda bilgi verebilir misiniz?\n\nİlginiz ve desteğiniz için teşekkür ederiz.\n\nSaygılarımızla,\n\nDişli, Güç Aktarma Sistemleri ve Titreşim Uygulama ve Araştırma Merkezi (DİMER)"",
+                ","Üzgünüm, verilen arama sonuçlarında DİMER (Dişli, Güç Aktarma Sistemleri ve Titreşim Uygulama ve Araştırma Merkezi) için NAS HDD tabanlı bir depolama ağı kurulumu, ağ bağlantısı ve erişim yetkilendirmeleri hakkında spesifik bilgi bulunmamaktadır. Ancak, NAS HDD tabanlı depolama ağı kurulumu ve yönetimi konusunda aşağıdaki bilgiler paylaşılmıştır:
+
+NAS (Network Attached Storage) çözümü, kurumsal veri yönetimi açısından uygun bir tercihtir. NAS sistemleri, RAID desteği sayesinde verilerin birden fazla diske eş zamanlı yazılmasını sağlayarak veri güvenliğini artırır ve bir disk bozulsa bile diğer disklerden erişimi mümkün kılar.
+
+NAS kurulumu için izlenmesi gereken adımlar:
+1. Sistem altyapısı ihtiyaçlarınızı (kapasite, RAID tipi, bağlantı gereksinimleri) belirleyin
+2. Bilgi İşlem Dairesi ile bir toplantı ayarlayarak teknik detayları görüşün
+3. Kurulum sonrası erişim yetkilendirmesi için kullanıcı listesi hazırlayın
+4. Sistem için sabit bir IP adresi tahsisi talebinde bulunun (kurulum sonrası)
+5. Gerekirse, kampüs dışından erişim için özel port açılması talebinde bulunun
+
+Kurulum sonrası kullanım için dikkat edilmesi gereken hususlar:
+- Sisteme erişim şifreli olarak korunmalı
+- Sadece kullanıcı adı ve parolası olan kişilerin erişimine izin verilmeli
+- Düzenli yedekleme planı oluşturulmalı
+
+Bu tür "
+"""Merhaba,\n\nHavacılık ve Uzay Müh. Bölümü doktora öğrencisiyim. 71 no'lu programda danışman değişikliği yaparken yanlışlıkla öğrenci onayını verdim. İşlemlere devam edebilmek için onayımı kaldırmam gerekiyor ama yapamıyorum. Bu konuda yardımcı olabilir misiniz?\n\nSeyfullah Aktaşoğlu\n\n1395722"",
+                ","Sevgili Seyfullah,
+
+Doktora öğrencileri için danışman değişikliği onayı kaldırma işlemiyle ilgili sorununuzda, METU Bilgi İşlem Merkezi'nden doğrudan destek alamayacaksınız. Bu tür durumlarda Öğrenci İşleri Daire Başkanlığı ile iletişime geçmeniz gerekmektedir. Onlar size bu konuda nasıl bir yol izlemeniz gerektiği hakkında en doğru ve güncel bilgiyi verebileceklerdir.
+
+İşte size önerilerim:
+
+1. Öğrenci İşleri Daire Başkanlığı ile iletişime geçin.
+2. Öğrenci numaranızı ve program numaranızı belirttiğiniz bir e-posta gönderin.
+3. Durumunuzu açıklayın ve danışman değişikliği onayının kaldırılmasını talep edin.
+
+İyi çalışmalar dilerim."
+"""Merhaba hocam. Ben 2670586 numaralı öğrenciniz Muhammed Andiç. BA100 dersi için hesap oluştururken bu linke (https:\/\/software.cc.metu.edu.tr\/) dokunduğumda erişim engeli veriyor. Ne yapacağımı bilmiyorum ve bu yüzden bu maili atma gereği duydum. Gereğinin yapılmasını saygılarımla arz ederim."",
+                ","Merhaba Muhammed,
+
+BA100 dersi için software.cc.metu.edu.tr adresine erişim sorunu yaşadığınızı görüyorum. Bu tür erişim sorunlarında aşağıdaki adımları izlemenizi öneririm:
+
+1. ODTÜ ağı dışından erişmeye çalışıyorsanız, öncelikle VPN bağlantısı kurarak ODTÜ ağına bağlanmayı deneyebilirsiniz.
+2. Eğer erişim engeli devam ediyorsa, Bilişim Destek Sistemi'ne https://bilisimdestek.metu.edu.tr/ adresinden ulaşarak sorunu bildirmeniz gerekiyor. Bu sistem aracılığıyla uzmanlar, erişim engelinizin nedenini tespit edip çözüm sunabilirler.
+3. Alternatif olarak, https://helpdesk.metu.edu.tr adresinden destek talebi oluşturabilirsiniz.
+
+Sorununuzla ilgili daha detaylı yardım alabilmeniz için, karşılaştığınız hata mesajını ve kullandığınız ağ bağlantısı yöntemini de paylaşmanız yararlı olacaktır."
+"""Merhaba,\nBen Ada Evcin 2717072 numaralı öğrenciyim.\nBu yıl mahkeme kararıyla ismim değişti. Microsoft teams hesabımda ismimi değiştiremiyorum eski ismim Saliha olarak gözüküyor derslere de katılamıyorum isim değiştirme seçeneği uygulamada yok. Yardımcı olabilirseniz sevinirim."",
+                ","Merhaba Ada,
+
+İsim değişikliğinizle ilgili Microsoft Teams'teki isminizi güncellemek için aşağıdaki adımları izlemeniz önerilir:
+
+1. ODTÜ Bilgi İşlem Daire Başkanlığı'na (BİDB) https://bilisimdestek.metu.edu.tr/ adresinden veya ODTÜ BİDB ana sayfasındaki ""Bize Ulaşın"" bağlantısından bir destek talebi açın. Talebinizde mahkeme kararıyla isim değişikliği yaptırdığınızı belirtin.
+2. Talebinizde öğrenci numaranızı (2717072) ve yeni isminizi belirtin.
+3. BİDB ekibi Microsoft hesabınızdaki lisanslarınızı güncelleyecektir.
+4. Güncelleme sonrası Microsoft Teams oturumunuzu tamamen kapatıp yeniden açmanız gerekecektir.
+
+Not: Yapılan değişikliğin sisteme yansıması biraz zaman alabilir, bu nedenle güncelleme sonrası bir süre bekleyip tekrar denemeniz gerekebilir. Ayrıca, resmi kayıtlarınızın güncellenmesi için Öğrenci İşleri veya Bilgi İşlem Merkezi ile iletişime geçerek mahkeme kararını ibraz etmeniz önerilir. Kayıtlarınız güncellendikten sonra, bu değişiklik muhtemelen Teams hesabınıza da yansıyacaktır."
+"""İyi günler,\nBen 1. sınıf öğrencisiyim, hazırlıkta eski telefonumla meturoamı sorunsuz bir şekilde kullanıyordum. Ancak bu yaz telefon değiştirdim ve yeni telefonumla sayfadaki yönergelere uymama rağmen bağlanamıyorum. Bu konuda yardımcı olabilirseniz sevinirim.\nEmir Yılmaz-2725042"",
+                ","Merhaba Emir,
+
+ODTÜ'de kablosuz ağ bağlantısı için meturoam kullanılmaktadır. ODTÜ öğrencisi olarak, Kullanıcı Yetkilendirme sayfasının Wireless Network bölümünde bulunan meturoam üzerinden kayıt olmanız gerekmektedir. Ancak yeni telefonunuzla bağlantı sorunu yaşadığınızı belirtmişsiniz.
+
+Meturoam'a bağlanmak için aşağıdaki adımları takip edebilirsiniz:
+
+1. Cihazınızın WPA2 Kurumsal sistemini ve PEAP/MSCHAPv2 algoritmalarını desteklediğinden emin olun.
+2. ODTÜ kullanıcı kodunuzu ve meturoam şifresini girin.
+3. Kullanıcı kodunuzun sonuna @metu.edu.tr yazmayınız.
+
+Bu adımları takip ederek meturoam'a bağlanabilirsiniz. Daha fazla bilgi için [meturoam bağlantısı](https://faq.cc.metu.edu.tr/node/2918) sayfasını ziyaret edebilirsiniz.
+
+Bu adımları denediyseniz ve sorun devam ederse, lütfen aşağıdaki iletişim bilgileri aracılığıyla ODTÜ Bilişim Destek Sistemi (Hot-line) ile iletişime geçin:
+
+E-posta: hot-line@metu.edu.tr  
+Telefon: 210 3355
+
+Onlar size daha detaylı teknik destek sağlayabilir ve bağlantı sorununuzu çözmek için yardımcı olabilirler. Onlar size meturoam bağlantısı için gerekli adımları yeniden anlatabilir veya yeni cihazınızla ilgili özel bir ayarlama gerekiyorsa bunu size iletebilirler."
+"""Günaydınlar,\n\nBazı kullanıcılarımıza gönderdikleri mail, rica etsem ilgilenir misiniz? Bu aralar artmaya başladı bu tarz otalama tekniği.\n\nİyi çalışmalar,\n\nBilginize,\nİlker POLATDEMİR\nSistem Yöneticisi\nODTÜ MEMS Araştırma Merkezi"",
+                ","Kullanıcılarına gönderilen otomatik maillerle ilgili bilgi bulamadım. Ancak, METU Bilgisayar Merkezi'nin otomatik maillerle ilgili bir bildirisi veya kılavuzu olup olmadığını kontrol etmek için doğrudan METU Bilgisayar Merkezi FAQ sayfasına gidebilirsiniz. İşte bağlantı: [METU Bilgisayar Merkezi FAQ](https://faq.cc.metu.edu.tr/faq)
+
+İlker Bey'in belirttiği ""otalama tekniği"" aslında ""oltalama"" yani ""phishing"" olarak bilinen bir siber saldırı yöntemidir. Bu tür saldırılarda kötü niyetli kişiler, ODTÜ kullanıcılarına sahte e-postalar göndererek kişisel bilgilerini ele geçirmeye çalışmaktadırlar.
+
+ODTÜ sistemlerinde bu tür e-postaların bir kısmı merkezi sunucular üzerinde otomatik olarak filtrelenmekte ve kullanıcılara ulaşmadan engellenmektedir. Ancak spam filtrelerine takılmamak için saldırganlar sürekli olarak e-postaların kaynak ve içeriklerini değiştirmektedir. Bu çeşitlilik nedeniyle bu tür e-postaların tamamının engellenmesi teknik olarak mümkün olamamaktadır.
+
+İlettiğiniz e-posta bilgisi ilgili birime iletilecek ve gerekli tedbirler alınacaktır. Kurumsal e-posta güvenliği için bu tür bildirimlerin yapılması oldukça önemlidir.
+
+Kullanıcıların Horde e-posta arayüzünde (https://horde.metu.edu.tr) şüpheli e-postaları ""İstenmeyen İleti Olarak Rapor Et / Report as Spam"" seçeneğiyle spam olarak işaretlemeleri, ODTÜ spam filtresin"
+"""Hocam merhaba,\n\nBilgisayarıma format atıp orjinal windows kurdum. Microsoft office 365 yükledim ama e138379@metu.edu.tr mail adresimi kabul etmiyor. Sifremi hatırlamıyorum, yeni sifreyi de admin olmadan olusturamıyorum.\n\nYardımcı olabilir misiniz? Tezime devam edebilmek icin microsoft ofis programlarına ihtiyacım var.\n\nTesekkurler\nSinem Erdogdu"",
+                ","Merhaba Sinem,
+
+Şifrenizi hatırlamamanız durumunda yapmanız gereken adımlar şunlardır:
+
+1. https://useraccount.metu.edu.tr/ adresine gidin.
+2. ""Şifrenizi mi unuttunuz?"" linkini kullanarak şifrenizi yenileyin.
+3. Kurtarma e-posta adresiniz ve diğer gerekli bilgileri girin.
+4. Kurtarma e-posta adresinize gönderilen aktivasyon linkine tıklayın.
+5. Yeni şifrenizi oluşturun.
+
+Yeni şifrenizi oluşturduktan sonra, bu şifre ve e138379@metu.edu.tr kullanıcı adınızla Microsoft Office 365'e giriş yapmayı tekrar deneyin. Bu işlem, ODTÜ hesabınıza erişim sağlamanıza ve Office programlarını kullanmanıza olanak tanıyacaktır.
+
+Eğer bu adımları izledikten sonra hala sorun yaşıyorsanız, ODTÜ Bilişim Destek Sistemi (Hot-line) ile iletişime geçmenizi öneririz. Onlar size daha detaylı yardım sağlayabilirler. Şifre işlemleri hakkında daha detaylı bilgiye http://faq.cc.metu.edu.tr/faq/password-and-recovery-e-mail-procedures-metu-user-codes adresinden ulaşabilirsiniz.
+
+Şifrenizi e-posta veya telefon yoluyla kimseyle paylaşmamanızı önemle hatırlatırız."
+"""Sayın İlgili,\n\nHordeden email yazarken otomatik spell-check yapıyor, anladığım kadarıyla İngilizceye göre ayarlanmış, bu yüzden Türkçe kelimelerin altını kırmızı yapıyor. Bunu Türkçeye göre ayarlamak istiyorum. Nereden değiştirildiğini bulamadım. Yardımcı olur musunuz?\n\nTeşekkürler.\n\nDoç. Dr. Nilay Yavuz\nDekan Yardımcısı\nİİBF, ODTÜ"",
+                ","Horde e-posta sistemindeki yazım denetimi (spell-check) ayarlarını Türkçeye değiştirmek için aşağıdaki adımları izleyebilirsiniz:
+
+1. Horde'a giriş yapın.
+2. Sol menüden ""Seçenekler"" > ""Genel Seçenekler"" > ""Yer ve Zaman"" seçeneklerini izleyin.
+3. ""Tercih Ettiğiniz Dili Seçiniz"" kısmından Türkçe'yi seçin.
+4. Dil ayarlarını kaydedin.
+
+Bu adımları takip ederek Horde'daki yazım denetimi ayarlarını Türkçeye göre ayarlayabilirsiniz. Eğer daha fazla yardıma ihtiyacınız olursa, METU Bilgisayar Merkezi'ne başvurabilirsiniz.
+
+İyi çalışmalar."
+"""Merhabalar, ismim Mehmet Kaya, öğrenci numaram 2367050. 2024 Fall döneminde lisanstan mezun oldum ve metu mailim kapanacağından dolayı kişisel mail adresime yönlendirmiştim gelen iletileri. Bugün hotline ile iletişime geçtiğimde yönlendirme iznini iptal ettik. Ancak bu zamana kadarki maillerimin bazılarını görüntüleyemiyorum. kaya.mehmet at metu.edu.tr ya da e236705 at metu.edu.tr adresine 22.09.2025 ve 06.10.2025 tarihleri arasında gönderilen mailleri METU mail adresime yönlendirilmesi konusunda desteklerinizi rica ediyorum.\n\nİyi çalışmalar dilerim."",
+               ","Merhaba Mehmet Kaya,
+
+METU mail yönlendirmenizin iptal edilmesinden sonra eski maillerinize erişim sorunu yaşıyorsanız, 22.09.2025 ve 06.10.2025 tarihleri arasında gelen maillerin METU mail adresinize yönlendirilmesi için METU Bilgi İşlem Dairesi (BİDB) ile iletişime geçmeniz gerekmektedir. İşte nasıl yapabileceğiniz:
+
+1. METU Bilgi İşlem Dairesi'ne (BİDB) 210 7100 numaralı telefondan veya cc@metu.edu.tr adresinden ulaşarak talebinizi iletmeniz gerekmektedir.
+2. Talebinizi oluştururken öğrenci numaranızı ve 22.09.2025 ile 06.10.2025 tarihleri arasındaki maillerin yönlendirilmesi talebinizi belirtmeniz işlemin daha hızlı yapılmasını sağlayacaktır.
+
+Hotline ile yaptığınız görüşmeyi takiben, kayıp maillerinizin kurtarılması için ayrıca bir teknik destek talebi oluşturulması gerekebilir. Ayrıca, daha detaylı yardım için Bilişim Destek Sistemi'ni kullanabilirsiniz.
+
+İyi çalışmalar dilerim."
+"""Merhabalar;\n\nEğitim Fakültesi Temel Eğitim Bölümüne, 89 günlük yurt içi kısa süreli görevlendirme ile (1 dönemliğine) araştırma görevlisi olarak Ayten Kurşun görevlendirilmiştir. Araştırma görevlimizin; ders bilgilerini işleyebilmesi ve öğrencilerinin odtü classa yükledikleri ödevlerini inceleyebilmesi için odtü class girişi yapması gerekmektedir.\n\nKısa süreli görevlendirmelerde üniversitemiz sicil numarası vermemekte, sicil numarası olmadığı için de odtü class tanımlaması yapılamamaktadır.\n\nAraştırma görevlimize ders takibini sağlayabilmesi için; sicil numarası olmadan, geçici süre ile kullanıcı kodu tanımlanması mümkün müdür?\n\nYardım ve desteklerinizi bekliyoruz. Şimdiden teşekkür eder, iyi çalışmalar dilerim.\n\nCansu DİNÇER\nTemel Eğitim Bölüm Sekreterliği\n4054"",
+                ","Merhaba,
+
+Kısa süreli görevlendirme ile gelen Araştırma Görevlisi Ayten Kurşun için ODTÜ Class erişimi talebiniz anlaşılmıştır. Bilgi sisteminde kullanıcı kodları genellikle ODTÜ mensuplarının merkezi bilişim servislerinden faydalanması amacıyla sicil numarasına bağlı olarak tahsis edilmektedir. Ancak kısa süreli görevlendirmelerde sicil numarası verilmediği için sorun yaşanmaktadır.
+
+Bu durumda öneri olarak:
+
+1. Bilişim Destek Ekibine (hotline@metu.edu.tr) bu özel durumu ileterek geçici kullanıcı kodu tanımlanması için talepte bulunabilirsiniz.
+2. Class kullanıcı kodunun geçici süre ile tanımlanması için araştırma görevlisinin görevlendirme belgesi ve ihtiyaç duyulan süreyi belirterek başvurmanız faydalı olacaktır.
+
+Sistem üzerinden bu tür özel durum taleplerinin değerlendirildiği görülmektedir. Daha fazla bilgi veya destek için METU Bilgi İşlem Merkezi ile iletişime geçebilirsiniz."
+"""Merhaba,\n\nYeni danışman ataması yaptığım için OIBS sitemindeki tez bilgilerimden bazılarına değişiklikler yapmam gerekiyor, fakat OIBS sistemi üzerinden bu değişiklikleri yapamadım.\n\nBunu başka bir yerden mi değiştirebiliyorduk, yoksa registration dönemine kısıtlı bir değişim süresi mi var ?\n\nEğer süresi dolduysa, sizin tarafınızdan bunu açılabiliyor musunuz, yoksa dekanlık\/rektörlüğe bir dilekçe yazarak mı devam etmem gerekiyor ?\n\nŞimdiden yardımınız için teşekkür ederim.\n\nOnur"",
+               ","Tez bilgilerinizi veya danışmanınızı değiştirmek için aşağıdaki adımları izleyebilirsiniz:
+
+1. Tez danışmanı değişikliği için iki yol vardır:
+   - Öncelikle, student portalı üzerinden 71 nolu akademik danışman atama sayfasından tez başlığınızı (İngilizce ve Türkçe), özet kısımlarını ve yeni tez danışmanınızı sisteme eklemeniz gerekir. Daha sonra eski tez danışmanınızın çekilme onayını ve yeni tez danışmanınızın kabul onayını almanız gerekiyor.
+   - Eski tez danışmanınız ayrılmış ise, bölüm yetkilisi tarafından ""Drop Advisor(s) Who Should Withdraw"" işlemi yapılabilir.
+
+2. Tez bilgilerinizdeki değişikliklerin tamamlanması için, sistem üzerinde onay sürecinin tamamlanması gerekir.
+
+3. Enstitü tarafından onaylanmış tez başlığınızı değiştirmek isterseniz, önce bölümünüze başvurarak bölüm onayının kaldırılmasını sağlamanız gerekir.
+
+4. Eğer sistem üzerinde 'Approve Status' kısmında ""CHANGE IN PROGRESS"" görünüyorsa, değişikliklerin işleme girmesi için Enstitü'den onay almanız gerekiyor.
+
+Bu durumda, en doğru bilgiyi almak ve gerekli işlemleri başlatmak için bağlı olduğunuz enstitü veya fakülte ile iletişime geçmenizi öneririz. Onlar size bu konuda nasıl bir yol izlemeniz gerektiğini, gerekirse bir dilekçe yazıp yazmayacağınızı veya başka bir prosedür izlemeniz gerekip gerekmediğini söyl"
+"""Merhaba,\n\nODTÜ'nün sağladığı VPN ile \""Ms Phd Advisor Assignment\"" programını \nkullanamıyorum. \""**You are not authorized to use this program.\"" mesajı \nalıyorum.\n\nBunun sebebi ne olabilir? Kampüs dışında bu program kullanılamıyor mu?\n\nTeşekkürler,"",
+                ","Üzgünüm, ""Ms Phd Advisor Assignment"" programını VPN üzerinden kullanamazsanız bu durumun nedeni hakkında spesifik bir bilgi bulunmamaktadır. Ancak, bu hata mesajının muhtemel nedenleri ve çözüm önerileri şunlardır:
+
+- Program yalnızca kampüs içinden erişilebilir olabilir (VPN ile erişim sağlanamamaktadır)
+- Kullanıcı hesabınız bu programa erişim için yetkilendirilmemiş olabilir
+- VPN bağlantısıyla ilgili teknik bir sorun olabilir
+
+Çözüm önerileri:
+- Programı kampüs içinden kullanmayı deneyebilirsiniz
+- İlgili birimin (muhtemelen bölüm sekreterliği veya akademik danışmanınız) bu programa erişim yetkinizi kontrol etmesini isteyebilirsiniz
+- VPN programınızı kaldırıp yeniden kurarak tekrar deneyebilirsiniz
+
+Sorun devam ederse, Bilgi İşlem Merkezi'ne ulaşmanızı veya akademik danışmanınızla iletişime geçmenizi öneririm."
+"""Merhaba,\n\nBen Ayşegül Sarı, Şehir ve Bölge Planlama Bölümünde araştırma görevlisiyim ve web sitesinden sorumluyum. Web sitemizde kişisel sayfalar üzerinde biyografi gibi uzun cümleler veya paragraflar fotoğraflar ile yan yana gelince aralarında hiç boşluk kalmıyor (bir örnek görsel ilettim). Örnek sayfa: https:\/\/crp.metu.edu.tr\/en\/dora-almassy-assist-prof-dr\n\nBu durumda nasıl bir çözüm uygulanabilir? Aralarında fotoğrafın hemen altındaki gibi bir mesafeyi satırda da nasıl koruyabiliriz? Ben de öğrenirsem iyi olur.\n\nYanıtınız için şimdiden teşekkürler.\nKolaylıklar,\n\nAyşegül"",
+                ","Merhaba Ayşegül Hanım,
+
+Web sitenizde kişisel sayfalardaki biyografi metinleri ve fotoğraflar arasındaki boşluk sorununu çözmek için aşağıdaki yöntemlerden birini uygulayabilirsiniz:
+
+1. **CSS Margin Özelliği**: Fotoğraf veya metin elementine sağ/sol margin ekleyerek aralarında boşluk oluşturabilirsiniz. Örneğin:
+   - Fotoğraf elementine `margin-right: 20px;`
+   - Veya metin elementine `margin-left: 20px;` ekleyebilirsiniz.
+
+2. **CSS Padding Özelliği**: İçerik kutusuna iç boşluk eklemek için:
+   - İlgili elementlere `padding: 15px;` veya sadece gerekli yönde `padding-right: 15px;` gibi değerler ekleyebilirsiniz.
+
+3. **Grid veya Flexbox**: Modern CSS layout sistemleri elementler arasında ""gap"" özelliği ile boşluk bırakmayı kolaylaştırır:
+   - Container'a `display: flex;` ve `gap: 20px;` ekleyerek elementler arasında eşit boşluk oluşturabilirsiniz.
+
+Web sitenizin mevcut yapısını bilmeden en etkili çözümü önermek zor olsa da, CSS ile bu tür görsel düzenlemeler kolayca yapılabilir. Drupal veya başka bir CMS kullanıyorsanız, tema ayarlarından da bu düzenlemeleri yapabilirsiniz.
+
+En basit çözüm olarak, ilgili sayfanın HTML/CSS koduna erişiminiz varsa, fotoğraf elementine margin-right veya metin elementine margin-left eklemek sorunu çözecektir. Eğer daha fazla yardıma ihtiyacınız olursa, ODTÜ Bilişim Destek Sistemi (Hot-"
