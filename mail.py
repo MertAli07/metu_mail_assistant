@@ -1,294 +1,294 @@
-import requests
 import streamlit as st
-from datetime import datetime, time
-import time
+import requests
 import os
-import bcrypt
-
-from dotenv import load_dotenv
-load_dotenv()
-
-# METU
-# LAMBDA_URL = "https://ngohy4i3pcv5j36nejdmjbcgpq0egfou.lambda-url.eu-central-1.on.aws/"
-
-# Goaltech
-LAMBDA_URL = "https://wrbpo5x2jap3crtgxxhpaxufdm0dacub.lambda-url.eu-central-1.on.aws/"
-
-def get_ai_suggestion(user_text):
-    payload = {
-        "input": {
-            "query": user_text
-        }
+from datetime import datetime
+import time
+ 
+# --- CONFIG & STYLING ---
+st.set_page_config(page_title="Mail Assistant Pro", page_icon="✨", layout="wide")
+ 
+# Custom CSS for Dark Mode
+st.markdown("""
+    <style>
+    /* Ana Arka Plan Rengi */
+    .stApp {
+        background-color: #0E1117;
+        color: #FAFAFA;
     }
+    
+    /* E-posta Kartı Tasarımı (Dark Mode) */
+    .email-card {
+        background-color: #262730; /* Koyu Gri Arka Plan */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        margin-bottom: 15px;
+        border-left: 5px solid #4f8bf9;
+    }
+    
+    /* Kart içindeki başlıklar ve metinler */
+    .email-card h4 {
+        color: #FFFFFF !important;
+        margin: 5px 0;
+    }
+    .email-card span {
+        color: #B0B0B0 !important; /* Tarih vs için açık gri */
+    }
+    
+    /* Expander (Açılır kutu) Tasarımı */
+    div[data-testid="stExpander"] {
+        background-color: #262730;
+        border: 1px solid #4A4A4A;
+        border-radius: 10px;
+        color: #FAFAFA;
+    }
+    
+    /* Expander içindeki metin alanları */
+    .stTextArea textarea {
+        background-color: #1E1E1E;
+        color: #FAFAFA;
+        border: 1px solid #4A4A4A;
+    }
+    
+    /* Sidebar butonları için iyileştirme */
+    div[data-testid="stSidebar"] button {
+        border-color: #4A4A4A;
+        color: #FAFAFA;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+ 
+# --- BACKEND FUNCTIONS ---
+ 
+# Goaltech Lambda URL
+LAMBDA_URL = "https://wrbpo5x2jap3crtgxxhpaxufdm0dacub.lambda-url.eu-central-1.on.aws/"
+ 
+def get_ai_suggestion(user_text):
+    """Fetches AI suggestion from AWS Lambda."""
+    payload = {"input": {"query": user_text}}
     try:
-        response = requests.post(LAMBDA_URL, json=payload)
+        # Real Call to Lambda
+        response = requests.post(LAMBDA_URL, json=payload, timeout=500)
         response.raise_for_status()
-        # Adjust 'text' key based on your actual Lambda JSON response structure
         return response.json().get("result", "AI Suggestion received, but output key was missing.")
     except Exception as e:
-        return f"Error connecting to AI Agent: {e}"
-
-# 1. Setup Page Config
-st.set_page_config(page_title="MockMail", page_icon="📧", layout="wide")
-
-# 2. Simple Authentication System
-# Load credentials from environment variables or Streamlit secrets
-def get_users_from_env():
-    """Load user credentials from environment variables or Streamlit secrets."""
-    users = {}
-    
-    # Try to get from Streamlit secrets first (for Streamlit Cloud)
-    # Then fall back to os.environ (for local development)
-    env_source = {}
-    
-    try:
-        # Check if we're on Streamlit Cloud (secrets are available)
-        if hasattr(st, 'secrets') and st.secrets:
-            # Streamlit Cloud uses st.secrets which is a dict-like object
-            for key in st.secrets.keys():
-                if key.startswith('USER_'):
-                    env_source[key] = st.secrets[key]
-    except:
-        pass
-    
-    # Also check os.environ (for local development or if secrets not available)
-    for key in os.environ:
-        if key.startswith('USER_') and key not in env_source:
-            env_source[key] = os.environ[key]
-    
-    # Parse user data from environment variables
-    # Format: USER_ADMIN_NAME, USER_ADMIN_EMAIL, USER_ADMIN_PASSWORD_HASH
-    user_prefixes = set()
-    for key in env_source:
-        if key.startswith('USER_') and key.endswith('_NAME'):
-            prefix = key.replace('_NAME', '')
-            user_prefixes.add(prefix)
-    
-    for prefix in user_prefixes:
-        username = prefix.replace('USER_', '').lower()
-        name = env_source.get(f'{prefix}_NAME')
-        email = env_source.get(f'{prefix}_EMAIL', '')
-        password_hash = env_source.get(f'{prefix}_PASSWORD_HASH')
-        
-        if name and password_hash:
-            users[username] = {
-                'name': name,
-                'email': email or '',
-                'password_hash': password_hash
-            }
-    
-    return users
-
-# Load users from environment variables, fallback to default for development
-USERS = get_users_from_env()
-
-# Development fallback - only used if no environment variables are set
-if not USERS:
-    st.warning("⚠️ No users found in environment variables. Using development defaults.")
-    # Use a fixed hash for development (password: password123)
-    # This hash was generated once and is reused so the password always works
-    # Hash for 'password123': $2b$12$eOE.V.ef3pL.ctWcUepXE.XegxGNQZGEbwBT03HPsOqDSvTvNHRCS
-    default_hash = '$2b$12$eOE.V.ef3pL.ctWcUepXE.XegxGNQZGEbwBT03HPsOqDSvTvNHRCS'
-    USERS = {
-        'admin': {
-            'password_hash': default_hash,
-            'name': 'Admin User',
-            'email': 'admin@metu.edu.tr'
-        }
-    }
-
-# Initialize session state for authentication
-if 'authenticated' not in st.session_state:
-    st.session_state['authenticated'] = False
-if 'username' not in st.session_state:
-    st.session_state['username'] = None
-if 'name' not in st.session_state:
-    st.session_state['name'] = None
-
-# Authentication check
-if not st.session_state['authenticated']:
-    st.title("🔐 Login Required")
-    
-    with st.form("login_form"):
-        username = st.text_input("Username", placeholder="Enter your username")
-        password = st.text_input("Password", type="password", placeholder="Enter your password")
-        submit = st.form_submit_button("Login")
-        
-        if submit:
-            # Normalize username to lowercase for matching
-            username_lower = username.lower().strip()
-            
-            if username_lower in USERS:
-                # Verify password against stored hash
-                stored_hash = USERS[username_lower]['password_hash']
-                try:
-                    # Try to verify the password
-                    if bcrypt.checkpw(password.encode('utf-8'), stored_hash.encode('utf-8')):
-                        st.session_state['authenticated'] = True
-                        st.session_state['username'] = username_lower
-                        st.session_state['name'] = USERS[username_lower]['name']
-                        st.success(f"Welcome, {USERS[username_lower]['name']}!")
-                        st.rerun()
-                    else:
-                        st.error("Invalid username or password")
-                except Exception as e:
-                    st.error(f"Authentication error: {e}")
-                    st.error(f"Debug: username='{username_lower}', hash exists={bool(stored_hash)}")
-            else:
-                st.error("Invalid username or password")
-                st.error(f"Debug: Available usernames: {list(USERS.keys())}, entered: '{username_lower}'")
-    
-    st.stop()
-
-# User is authenticated - show logout button and continue with app
-with st.sidebar:
-    st.write(f"Welcome *{st.session_state['name']}*")
-    if st.button("Logout"):
-        st.session_state['authenticated'] = False
-        st.session_state['username'] = None
-        st.session_state['name'] = None
-        st.rerun()
-
-# 3. Initialize "Database" in Session State (only accessible after authentication)
+        return f"⚠️ Error connecting to AI Agent: {str(e)}"
+ 
+# --- INITIALIZATION ---
+ 
+# Initialize Session State Variables directly (No Auth needed)
 if "outbox" not in st.session_state:
     st.session_state.outbox = []
 if "selected_example" not in st.session_state:
     st.session_state.selected_example = None
-if "current_page" not in st.session_state:
-    st.session_state.current_page = "Compose"
-
-# --- Sidebar Navigation ---
-st.sidebar.title("📧 MockMail")
-page_options = ["Compose", "Incoming", "About"]
-try:
-    page_index = page_options.index(st.session_state.current_page)
-except ValueError:
-    page_index = 0
-page = st.sidebar.radio("Navigate", page_options, index=page_index)
-st.session_state.current_page = page
-st.sidebar.write("---")
-st.sidebar.subheader("Example Questions")
-
-# Define example questions
-example_questions = [
-    {
-        "label": "Intructor Change",
-        "to": "hotline@metu.edu.tr",
-        "subject": "Intructor Change Request",
-        "body": "Merhaba. Bu Dönem emekli olan bölümümüz hocalarından Prof.Dr. Ali Eryılmazın\nöğrencisi 2599686 numaralı öğrencisi Semra Sıkıra'ın Danışman değişikliği\nyapması gerekmektedir. Ali hocamız sisteme giremediği için öğrenciyi\nbırakamıyor. Nasıl yapabiliriz?\n\n\nKevser Özkan \n\n4049"
-    },
-    {
-        "label": "VPN Connection Problem",
-        "to": "hotline@metu.edu.tr",
-        "subject": "VPN Connection Problem",
-        "body": "Merhaba hocam,\n\nİyi günler, VPN indirdiğim masaüstü bilgisayarımda eklerde belirttiğim gibi bir uyarı alıyorum ve indirmek istediğim lisanslı uygulamaların olduğu “https:\/\/software.cc.metu.edu.tr\/download.php” linke ulaşamıyorum. VPN bağlandığı halde bu linke tıkladığımda güvenli bulunmadığından yine bağlanamıyorum. Yardımcı olursanız çok sevinirim.\n\nTeşekkürler,\nAzra"
-    },
-    {
-        "label": "Internet Connection Problem",
-        "to": "hotline@metu.edu.tr",
-        "subject": "Internet Connection Problem",
-        "body": "Merhaba hocam,\n\nİyi günler, eduroma nasıl bağlanabilirim? İyi çalışmalar, Mert Ali Yalçın"
-    },
-    {
-        "label": "Academic Calendar",
-        "to": "academic@metu.edu.tr",
-        "subject": "Academic Calendar Request",
-        "body": "Dear Academic Office,\n\nCould you please share the academic calendar for this academic year, including important dates for exams, holidays, and registration periods?\n\nBest regards."
-    },
-    {
-        "label": "Library Access",
-        "to": "library@metu.edu.tr",
-        "subject": "Library Access and Resources",
-        "body": "Hello,\n\nI would like to know about library access hours, online resources, and how to access digital databases. Could you provide this information?\n\nThank you."
-    }
-]
-
-# Display example questions as buttons
-for example in example_questions:
-    if st.sidebar.button(example["label"], key=f"example_{example['label']}"):
-        st.session_state.selected_example = example
-        st.session_state.current_page = "Compose"
-        st.rerun()
-
-
-# --- Compose Page ---
-if page == "Compose":
-    st.header("Compose New Message")
+if "name" not in st.session_state:
+    st.session_state.name = "Demo User" # Default name for the UI
+ 
+# --- MAIN APP LAYOUT ---
+ 
+# Sidebar
+with st.sidebar:
+    st.image("https://cdn-icons-png.flaticon.com/512/666/666162.png", width=50)
+    st.markdown(f"### Hello, {st.session_state['name'].split()[0]}! 👋")
     
-    # Update session state with example values if an example was selected
+    st.markdown("---")
+    
+    # Navigation
+    menu = st.radio("Navigation", ["📥 Incoming", "✍️ Compose", "ℹ️ About"], label_visibility="collapsed")
+    
+    st.markdown("---")
+    st.caption("QUICK TEMPLATES")
+    
+    # Example Questions
+    examples = [
+        # --- Orijinal Sorular ---
+        {"label": "🎓 Instructor Change", "to": "hotline@metu.edu.tr", "subject": "Instructor Change Request", "body": "Merhaba. Bu Dönem emekli olan bölümümüz hocalarından Prof.Dr. Ali Eryılmazın\nöğrencisi 2599686 numaralı öğrencisi Semra Sıkıra'ın Danışman değişikliği..."},
+        {"label": "🔒 VPN Issue", "to": "hotline@metu.edu.tr", "subject": "VPN Connection Problem", "body": "Merhaba hocam, VPN indirdiğim masaüstü bilgisayarımda bağlantı hatası alıyorum..."},
+        {"label": "📅 Academic Calendar", "to": "academic@metu.edu.tr", "subject": "Calendar Request", "body": "Dear Academic Office, Could you please share the academic calendar?"},
+        
+        # --- Genel Bilgi Soruları ---
+        {"label": "🇬🇧 Eğitim Dili", "to": "tanitim@metu.edu.tr", "subject": "Eğitim Dili Hakkında Bilgi", "body": "Merhaba,\n\nODTÜ'de eğitim dili nedir? Tamamı İngilizce mi yoksa Türkçe bölümler de var mı?\n\nSaygılarımla."},
+        {"label": "💰 Burs Olanakları", "to": "bursofisi@metu.edu.tr", "subject": "Burs Olanakları Hakkında", "body": "İyi günler,\n\nÜniversitenizin sunduğu burs olanakları nelerdir? Başarı bursu ve ihtiyaç bursu kriterleri hakkında bilgi alabilir miyim?\n\nTeşekkürler."},
+        {"label": "🤝 Mezun Ağı", "to": "mezun@metu.edu.tr", "subject": "Mezun İletişim Ağı", "body": "Merhaba,\n\nODTÜ mezunları arası iletişim ve bilgi ağı ne kadar gelişmiş durumda? Mezunlar Derneği'nin aktif çalışmaları var mı?"},
+        {"label": "❓ Genel Sorular", "to": "iletisim@metu.edu.tr", "subject": "İlgili Birim Yönlendirmesi", "body": "Merhaba,\n\nODTÜ ile ilgili genel sorularım var, hangi birim ile görüşmeliyim? Yönlendirebilirseniz sevinirim."},
+        
+        # --- Öğrenci İşleri (Kayıt/Ders) Soruları ---
+        {"label": "📝 Ara Dönem Kayıt", "to": "oidb@metu.edu.tr", "subject": "Hazırlık Atlama ve Ara Dönem", "body": "Sayın Yetkili,\n\nKayıtlardan sonra birinci dönem sonunda İYS-IELTS-TOEFL-PTE belgelerinden herhangi birini vererek ara dönemde (Irregular olarak) birinci sınıf öğrencisi olunabilir mi?\n\nBilgilerinize arz ederim."},
+        {"label": "📋 Geç Kayıt/Ekle-Bırak", "to": "oidb@metu.edu.tr", "subject": "Ders Ekleme-Bırakma ve Geç Kayıt Prosedürü", "body": "Sayın Yetkili,\n\nDers ekleme-bırakma süresi bittikten sonra ders ekleme-bırakma işlemleri nasıl yapılmaktadır?\n\nAyrıca, etkileşimli kayıtlarda kayıt yaptırmayan öğrencilerin kayıt işlemleri için izlemesi gereken prosedür nedir?\n\nBilgilerinize arz ederim."},
+        {"label": "💼 Staj ve Sigorta", "to": "staj@metu.edu.tr", "subject": "Staj İşlemleri ve Sigorta Hakkında", "body": "Merhaba,\n\nStaj başvurusu ve staj süresince yaptırılan sigorta işlemleri ile ilgili detaylı bilgiyi nereden alabilirim? Başvuru sürecinde hangi belgeler gereklidir?\n\nYardımlarınız için teşekkürler."},
+ 
+        # --- YENİ EKLENENLER (Diploma & Yan Dal) ---
+        {"label": "📜 Diploma Kaybı", "to": "oidb@metu.edu.tr", "subject": "Diploma İkinci Nüsha Talebi", "body": "Sayın Yetkili,\n\nDiplomamı kaybettim. İkinci kopya (nüsha) sizden alabilir miyim? Bunun için gerekli prosedür ve belgeler nelerdir?\n\nBilgilerinize arz ederim."},
+        {"label": "📚 İkinci Yan Dal", "to": "oidb@metu.edu.tr", "subject": "İkinci Yan Dal Programı Başvurusu", "body": "Merhaba,\n\nŞu anda bir yan dal programına kayıtlıyım. Başka bir program için başvuru yapabilir miyim? Kabul olmam halinde aynı anda iki yan dal programı izleyebilir miyim?\n\nSaygılarımla."}
+    ]
+    
+    for ex in examples:
+        if st.button(ex["label"], key=f"btn_{ex['label']}", use_container_width=True):
+            st.session_state.selected_example = ex
+            st.toast(f"Template loaded: {ex['label']}")
+ 
+# --- PAGE: COMPOSE ---
+if menu == "✍️ Compose":
+    st.title("✍️ New Message")
+    st.markdown("Draft your message below. The AI Agent will analyze replies.")
+    
+    # Session State'de anlık sonucu tutmak için değişken kontrolü
+    if "latest_result" not in st.session_state:
+        st.session_state.latest_result = None
+ 
+    # Load template if selected
     if st.session_state.selected_example:
-        st.session_state.compose_to = st.session_state.selected_example["to"]
-        st.session_state.compose_subject = st.session_state.selected_example["subject"]
-        st.session_state.compose_body = st.session_state.selected_example["body"]
-        # Clear the selected example after using it
-        st.session_state.selected_example = None
+        default_to = st.session_state.selected_example["to"]
+        default_sub = st.session_state.selected_example["subject"]
+        default_body = st.session_state.selected_example["body"]
+        st.session_state.selected_example = None # Reset
+        # Yeni şablon yüklendiğinde eski sonucu temizle
+        st.session_state.latest_result = None
+    else:
+        default_to = ""
+        default_sub = ""
+        default_body = ""
+ 
+    col1, col2 = st.columns([3, 1])
     
-    # Get default values from session state or use empty strings
-    default_recipient = st.session_state.get("compose_to", "")
-    default_subject = st.session_state.get("compose_subject", "")
-    default_body = st.session_state.get("compose_body", "")
-    
-    with st.form("composer", clear_on_submit=True):
-        recipient = st.text_input("To:", value=default_recipient, placeholder="example@email.com", key="compose_to")
-        subject = st.text_input("Subject:", value=default_subject, placeholder="Hello!", key="compose_subject")
-        body = st.text_area("Message:", value=default_body, placeholder="Type your message here...", height=200, key="compose_body")
-        
-        submit = st.form_submit_button("Send Message")
-        
-        if submit:
-            # Get values from session state (form fields store values in session state when using keys)
-            recipient_val = st.session_state.get("compose_to", "").strip()
-            subject_val = st.session_state.get("compose_subject", "").strip()
-            body_val = st.session_state.get("compose_body", "").strip()
+    with col1:
+        with st.container():
+            # Session state keys kullanarak veriyi koruyoruz
+            if 'form_to' not in st.session_state: st.session_state.form_to = default_to
+            if 'form_sub' not in st.session_state: st.session_state.form_sub = default_sub
+            if 'form_body' not in st.session_state: st.session_state.form_body = default_body
+ 
+            if default_to:
+                st.session_state.form_to = default_to
+                st.session_state.form_sub = default_sub
+                st.session_state.form_body = default_body
+ 
+            with st.form("compose_form", clear_on_submit=False): # Formu temizlemiyoruz ki yazı kalsın
+                to_addr = st.text_input("To", key="form_to", placeholder="recipient@metu.edu.tr")
+                subject = st.text_input("Subject", key="form_sub", placeholder="Brief summary of the issue")
+                body = st.text_area("Message Body", key="form_body", height=250)
+                
+                col_sub1, col_sub2 = st.columns([1, 5])
+                with col_sub1:
+                    submitted = st.form_submit_button("🚀 Send", use_container_width=True, type="primary")
+                
+                if submitted:
+                    if to_addr and subject and body:
+                        # İşlem başladığını göster
+                        with st.spinner("AI Agent is analyzing the request..."):
+                            # 1. AI'dan cevabı al
+                            ai_response = get_ai_suggestion(body)
+                            
+                            # 2. Hem ekranda göstermek için kaydet
+                            st.session_state.latest_result = ai_response
+                            
+                            # 3. Hem de Inbox'a (Incoming) kaydet
+                            new_email = {
+                                "id": int(time.time()),
+                                "to": to_addr,
+                                "subject": subject,
+                                "body": body,
+                                "time": datetime.now().strftime("%d %b, %H:%M"),
+                                "read": False,
+                                "ai_hint": ai_response # Cevabı direkt ekliyoruz
+                            }
+                            st.session_state.outbox.append(new_email)
+                        
+                        st.success("Message processed and saved!")
+                    else:
+                        st.warning("Please fill in all fields.")
+ 
+        # --- SONUCU EKRANDA GÖSTERME ALANI ---
+        if st.session_state.latest_result:
+            st.markdown("---")
+            st.subheader("⚡ Instant AI Analysis")
             
-            if recipient_val and subject_val and body_val:
-                # Create the email object
-                new_email = {
-                    "to": recipient_val,
-                    "subject": subject_val,
-                    "body": body_val,
-                    "time": datetime.now().strftime("%H:%M:%S")
-                }
-                # "Send" it by saving to our list
-                st.session_state.outbox.append(new_email)
-                # Clear the selected example after successful submission
-                st.session_state.selected_example = None
-                st.success(f"Message sent to {recipient_val}!")
-            else:
-                st.error("Please fill out all fields.")
-
-# --- Sent Folder Page ---
-elif page == "Incoming":
-    st.header("Incoming Messages")
+            # Sonucu chat balonu içinde göster
+            with st.chat_message("assistant", avatar="🤖"):
+                st.markdown(f"**AI Suggestion:**")
+                st.write(st.session_state.latest_result)
+                
+                # Aksiyon butonları (Görsel amaçlı)
+                c1, c2 = st.columns(2)
+                if c1.button("✅ Approve Draft", key="fast_approve"):
+                    st.toast("Draft approved via Quick Action")
+                if c2.button("🛠️ Edit Response", key="fast_edit"):
+                    st.toast("Opened in editor mode")
+ 
+    with col2:
+        st.info("💡 **Tip:** The result will appear instantly below the form and will also be saved in your 'Incoming' folder.")
+ 
+# --- PAGE: INCOMING ---
+elif menu == "📥 Incoming":
+    st.title("📥 Inbox")
     
     if not st.session_state.outbox:
-        st.info("Your inbox is empty.")
+        st.container().markdown("""
+        <div style="text-align: center; padding: 50px; color: #666;">
+            <h3>📭 Nothing here yet</h3>
+            <p>Sent messages and their AI analysis will appear here.</p>
+        </div>
+        """, unsafe_allow_html=True)
     else:
-        # Display emails in reverse order (newest first)
-        for idx, email in enumerate(reversed(st.session_state.outbox)):
-            with st.expander(f"To: {email['to']} | {email['subject']} ({email['time']})"):
-                st.write(f"**Subject:** {email['subject']}")
-                st.write(f"**Body:**")
-                st.info(email['body'])
-
-                st.write("---")
-                st.write("**✨ AI Suggestion:**")
+        # Reverse list to show newest first
+        for email in reversed(st.session_state.outbox):
+            
+            # Custom HTML Card for the Email Header
+            # Not: Renkler CSS içinde tanımlandı, burada class="email-card" yeterli.
+            st.markdown(f"""
+            <div class="email-card">
+                <div style="display:flex; justify-content:space-between; font-size:0.8em;">
+                    <span>To: {email['to']}</span>
+                    <span>{email['time']}</span>
+                </div>
+                <h4>{email['subject']}</h4>
+            </div>
+            """, unsafe_allow_html=True)
+ 
+            with st.expander("📄 View Content & AI Insights", expanded=False):
+                st.markdown("**Message Content:**")
+                st.text_area("", value=email['body'], height=100, disabled=True, key=f"body_{email['id']}")
                 
-                # Check if we already have the suggestion stored
-                print("email", email)
-                with st.spinner("Agent is thinking..."):
-                    # Call your Lambda URL
-                    suggestion = get_ai_suggestion(email['body'])
-                    # Store it so it doesn't call the API again on next rerun
-                    email["ai_hint"] = suggestion
+                st.markdown("---")
+                st.markdown("#### ✨ AI Agent Analysis")
                 
-                st.warning(email["ai_hint"])
-
-                if st.button(f"Delete Message {idx}", key=f"del_{idx}"):
-                    # Logic to remove could go here
-                    pass
-
-# --- About Page ---
-else:
-    st.header("About This App")
-    st.write("This is a 'dummy' frontend application built with Streamlit.")
+                # Check if we already have the hint to avoid re-calling Lambda on every render
+                if "ai_hint" not in email:
+                    if st.button("🧠 Analyze with AI Agent", key=f"analyze_{email['id']}"):
+                        with st.status("Connecting to Neural Network...", expanded=True) as status:
+                            st.write("Extracting context...")
+                            time.sleep(0.5)
+                            st.write("Querying Lambda Knowledge Base...")
+                            suggestion = get_ai_suggestion(email['body'])
+                            email["ai_hint"] = suggestion
+                            status.update(label="Analysis Complete!", state="complete", expanded=False)
+                        st.rerun()
+                
+                # If analysis exists, show it nicely
+                if "ai_hint" in email:
+                    # Using Chat Message UI for the Agent
+                    with st.chat_message("assistant", avatar="🤖"):
+                        st.markdown(f"**Suggestion:**")
+                        st.markdown(email["ai_hint"])
+                        
+                        st.markdown("---")
+                        col_act1, col_act2 = st.columns(2)
+                        with col_act1:
+                            st.button("✅ Approve Draft", key=f"app_{email['id']}")
+                        with col_act2:
+                            st.button("🛠️ Edit Response", key=f"edit_{email['id']}")
+ 
+# --- PAGE: ABOUT ---
+elif menu == "ℹ️ About":
+    st.title("About Mail Assistant")
+    st.image("https://streamlit.io/images/brand/streamlit-logo-secondary-colormark-darktext.png", width=200)
+    st.markdown("""
+    This application is a **Proof of Concept (PoC)** for the METU Mail Assistant project.
+    
+    **Architecture:**
+    * **Frontend:** Streamlit (Python)
+    * **Backend Logic:** AWS Lambda
+    * **AI Model:** AWS Bedrock / Custom LLM Agent
+    
+    Built for demonstrating automated email classification and response drafting capabilities.
+    """)
