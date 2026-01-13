@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import requests
 import os
 from datetime import datetime
@@ -94,7 +95,7 @@ with st.sidebar:
     st.markdown("---")
     
     # Navigation
-    menu = st.radio("Navigation", ["📥 Incoming", "✍️ Compose", "ℹ️ About"], label_visibility="collapsed")
+    menu = st.radio("Navigation", ["📥 Incoming", "✍️ Compose", "📊 Diagram", "ℹ️ About"], label_visibility="collapsed")
     
     st.markdown("---")
     st.caption("QUICK TEMPLATES")
@@ -277,7 +278,61 @@ elif menu == "📥 Incoming":
                             st.button("✅ Approve Draft", key=f"app_{email['id']}")
                         with col_act2:
                             st.button("🛠️ Edit Response", key=f"edit_{email['id']}")
- 
+
+# --- PAGE: DIAGRAM ---
+elif menu == "📊 Diagram":
+    st.title("📊 System Architecture Diagram")
+    st.markdown("Visual representation of the METU Mail Assistant system architecture.")
+    
+    # Read and display the diagram HTML
+    diagram_path = os.path.join(os.path.dirname(__file__), "docs", "index.html")
+    try:
+        with open(diagram_path, "r", encoding="utf-8") as f:
+            diagram_html = f.read()
+        
+        # Inject CSS to make background white
+        white_bg_style = """
+        <style>
+            body {
+                background-color: white !important;
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                background-color: white !important;
+            }
+            .mxgraph {
+                background-color: white !important;
+            }
+            div[class*="mxgraph"] {
+                background-color: white !important;
+            }
+            iframe {
+                background-color: white !important;
+            }
+        </style>
+        """
+        # Insert style tag in head section
+        if "</head>" in diagram_html:
+            diagram_html = diagram_html.replace("</head>", white_bg_style + "</head>")
+        elif "<body>" in diagram_html:
+            # If no head tag, add style before body
+            diagram_html = diagram_html.replace("<body>", white_bg_style + "<body style='background-color: white;'>")
+        else:
+            # Fallback: prepend style
+            diagram_html = white_bg_style + diagram_html
+        
+        # Also modify body tag directly if it exists
+        if "<body>" in diagram_html and 'style=' not in diagram_html.split("<body>")[1].split(">")[0]:
+            diagram_html = diagram_html.replace("<body>", "<body style='background-color: white;'>")
+        
+        # Display the diagram with appropriate height
+        components.html(diagram_html, height=1200, scrolling=True)
+    except FileNotFoundError:
+        st.error(f"Diagram file not found at: {diagram_path}")
+    except Exception as e:
+        st.error(f"Error loading diagram: {str(e)}")
+
 # --- PAGE: ABOUT ---
 elif menu == "ℹ️ About":
     st.title("About Mail Assistant")
