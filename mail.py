@@ -102,9 +102,9 @@ with st.sidebar:
     # Example Questions
     examples = [
         # --- Orijinal Sorular ---
-        {"label": "🎓 Instructor Change", "to": "hotline@metu.edu.tr", "subject": "Instructor Change Request", "body": "Merhaba. Bu Dönem emekli olan bölümümüz hocalarından Prof.Dr. Ali Eryılmazın\nöğrencisi 2599686 numaralı öğrencisi Semra Sıkıra'ın Danışman değişikliği..."},
-        {"label": "🔒 VPN Issue", "to": "hotline@metu.edu.tr", "subject": "VPN Connection Problem", "body": "Merhaba hocam, VPN indirdiğim masaüstü bilgisayarımda bağlantı hatası alıyorum..."},
-        {"label": "📅 Academic Calendar", "to": "academic@metu.edu.tr", "subject": "Calendar Request", "body": "Dear Academic Office, Could you please share the academic calendar?"},
+        {"label": "🎓 Instructor Change", "to": "hotline@metu.edu.tr", "subject": "Instructor Change Request", "body": "Merhaba. Bu Dönem emekli olan bölümümüz hocalarından Prof.Dr. Ali Eryılmazın\nöğrencisi 2599686 numaralı öğrencisi Semra Sıkıra'ın Danışman değişikliği\nyapması gerekmektedir. Ali hocamız sisteme giremediği için öğrenciyi\nbırakamıyor. Nasıl yapabiliriz?\n\n\nKevser Özkan \n\n4049"},
+        {"label": "🔒 VPN Issue", "to": "hotline@metu.edu.tr", "subject": "VPN Connection Problem", "body": "Merhaba hocam,\n\nİyi günler, VPN indirdiğim masaüstü bilgisayarımda eklerde belirttiğim gibi bir uyarı alıyorum ve indirmek istediğim lisanslı uygulamaların olduğu “https:\/\/software.cc.metu.edu.tr\/download.php” linke ulaşamıyorum. VPN bağlandığı halde bu linke tıkladığımda güvenli bulunmadığından yine bağlanamıyorum. Yardımcı olursanız çok sevinirim.\n\nTeşekkürler,\nAzra"},
+        {"label": "❓ Eduroam", "to": "academic@metu.edu.tr", "subject": "Cannot Connect to Eduroam", "body": "Merhaba hocam,\n\nİyi günler, eduroma nasıl bağlanabilirim? İyi çalışmalar, Mert Ali Yalçın"},
         
         # --- Genel Bilgi Soruları ---
         {"label": "🇬🇧 Eğitim Dili", "to": "tanitim@metu.edu.tr", "subject": "Eğitim Dili Hakkında Bilgi", "body": "Merhaba,\n\nODTÜ'de eğitim dili nedir? Tamamı İngilizce mi yoksa Türkçe bölümler de var mı?\n\nSaygılarımla."},
