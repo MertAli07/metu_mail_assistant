@@ -62,7 +62,7 @@ st.markdown("""
 # --- BACKEND FUNCTIONS ---
  
 # Goaltech Lambda URL
-LAMBDA_URL = "https://wrbpo5x2jap3crtgxxhpaxufdm0dacub.lambda-url.eu-central-1.on.aws/"
+LAMBDA_URL = "https://ngohy4i3pcv5j36nejdmjbcgpq0egfou.lambda-url.eu-central-1.on.aws/"
  
 def get_ai_suggestion(user_text):
     """Fetches AI suggestion from AWS Lambda."""
