@@ -8,57 +8,6 @@ import time
 # --- CONFIG & STYLING ---
 st.set_page_config(page_title="Mail Assistant Pro", page_icon="✨", layout="wide")
  
-# Custom CSS for Dark Mode
-st.markdown("""
-    <style>
-    /* Ana Arka Plan Rengi */
-    .stApp {
-        background-color: #0E1117;
-        color: #FAFAFA;
-    }
-    
-    /* E-posta Kartı Tasarımı (Dark Mode) */
-    .email-card {
-        background-color: #262730; /* Koyu Gri Arka Plan */
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        margin-bottom: 15px;
-        border-left: 5px solid #4f8bf9;
-    }
-    
-    /* Kart içindeki başlıklar ve metinler */
-    .email-card h4 {
-        color: #FFFFFF !important;
-        margin: 5px 0;
-    }
-    .email-card span {
-        color: #B0B0B0 !important; /* Tarih vs için açık gri */
-    }
-    
-    /* Expander (Açılır kutu) Tasarımı */
-    div[data-testid="stExpander"] {
-        background-color: #262730;
-        border: 1px solid #4A4A4A;
-        border-radius: 10px;
-        color: #FAFAFA;
-    }
-    
-    /* Expander içindeki metin alanları */
-    .stTextArea textarea {
-        background-color: #1E1E1E;
-        color: #FAFAFA;
-        border: 1px solid #4A4A4A;
-    }
-    
-    /* Sidebar butonları için iyileştirme */
-    div[data-testid="stSidebar"] button {
-        border-color: #4A4A4A;
-        color: #FAFAFA;
-    }
-    </style>
-    """, unsafe_allow_html=True)
- 
 # --- BACKEND FUNCTIONS ---
  
 # Goaltech Lambda URL
