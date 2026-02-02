@@ -4,6 +4,7 @@ import requests
 import os
 from datetime import datetime
 import time
+import boto3
  
 # --- CONFIG & STYLING ---
 st.set_page_config(page_title="Mail Assistant Pro", page_icon="✨", layout="wide")
@@ -23,12 +24,14 @@ def get_ai_suggestion(user_text):
         data = response.json()
         return {
             "result": data.get("result", "AI Suggestion received, but output key was missing."),
-            "trace": data.get("trace")
+            "trace": data.get("trace"),
+            "request_id": data.get("request_id")
         }
     except Exception as e:
         return {
             "result": f"⚠️ Error connecting to AI Agent: {str(e)}",
-            "trace": None
+            "trace": None,
+            "request_id": None
         }
 
 def extract_prompt_fields(trace_data, node_name="Prompt_1"):
@@ -68,6 +71,37 @@ def _map_fields(fields):
             continue
         mapped[key] = content["document"]
     return mapped
+
+def fetch_bedrock_logs(request_id, limit=50, lookback_minutes=60):
+    """Fetch CloudWatch logs for a Bedrock invocation request_id."""
+    if not request_id:
+        return []
+    try:
+        logs = boto3.client("logs", region_name="eu-central-1")
+        end_time = int(time.time() * 1000)
+        start_time = end_time - (lookback_minutes * 60 * 1000)
+        response = logs.filter_log_events(
+            logGroupName="/aws/bedrock/invocations",
+            filterPattern=f'{{ $.requestId = "{request_id}" }}',
+            startTime=start_time,
+            endTime=end_time,
+            interleaved=True,
+            limit=limit
+        )
+        events = response.get("events", [])
+        if not events:
+            response = logs.filter_log_events(
+                logGroupName="/aws/bedrock/invocations",
+                filterPattern=f'"{request_id}"',
+                startTime=start_time,
+                endTime=end_time,
+                interleaved=True,
+                limit=limit
+            )
+            events = response.get("events", [])
+        return events
+    except Exception as e:
+        return [{"message": f"⚠️ Unable to fetch Bedrock logs: {str(e)}"}]
  
 # --- INITIALIZATION ---
  
@@ -186,7 +220,8 @@ if menu == "✍️ Compose":
                                 "time": datetime.now().strftime("%d %b, %H:%M"),
                                 "read": False,
                                 "ai_hint": ai_response.get("result"),
-                                "ai_trace": ai_response.get("trace")
+                                "ai_trace": ai_response.get("trace"),
+                                "ai_request_id": ai_response.get("request_id")
                             }
                             st.session_state.outbox.append(new_email)
                         
@@ -213,6 +248,14 @@ if menu == "✍️ Compose":
                         st.write(prompt_fields.get("rss_answer", ""))
                     with st.expander("mail_answer", expanded=False):
                         st.write(prompt_fields.get("mail_answer", ""))
+                request_id = st.session_state.latest_result.get("request_id")
+                if request_id:
+                    with st.expander("Bedrock logs", expanded=False):
+                        logs = fetch_bedrock_logs(request_id)
+                        if logs:
+                            st.json(logs)
+                        else:
+                            st.caption("No log events found for this request_id yet.")
                 
                 # Aksiyon butonları (Görsel amaçlı)
                 c1, c2 = st.columns(2)
@@ -268,6 +311,7 @@ elif menu == "📥 Incoming":
                             suggestion = get_ai_suggestion(email['body'])
                             email["ai_hint"] = suggestion.get("result")
                             email["ai_trace"] = suggestion.get("trace")
+                            email["ai_request_id"] = suggestion.get("request_id")
                             status.update(label="Analysis Complete!", state="complete", expanded=False)
                         st.rerun()
                 
@@ -286,6 +330,14 @@ elif menu == "📥 Incoming":
                                 st.write(prompt_fields.get("rss_answer", ""))
                             with st.expander("mail_answer", expanded=False):
                                 st.write(prompt_fields.get("mail_answer", ""))
+                        request_id = email.get("ai_request_id")
+                        if request_id:
+                            with st.expander("Bedrock logs", expanded=False):
+                                logs = fetch_bedrock_logs(request_id)
+                                if logs:
+                                    st.json(logs)
+                                else:
+                                    st.caption("No log events found for this request_id yet.")
                         
                         st.markdown("---")
                         col_act1, col_act2 = st.columns(2)
