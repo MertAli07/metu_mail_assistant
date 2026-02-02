@@ -1,5 +1,5 @@
 import streamlit as st
-# import streamlit.components.v1 as components
+import streamlit.components.v1 as components
 import requests
 import os
 from datetime import datetime
