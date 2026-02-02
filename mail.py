@@ -20,9 +20,54 @@ def get_ai_suggestion(user_text):
         # Real Call to Lambda
         response = requests.post(LAMBDA_URL, json=payload, timeout=500)
         response.raise_for_status()
-        return response.json().get("result", "AI Suggestion received, but output key was missing.")
+        data = response.json()
+        return {
+            "result": data.get("result", "AI Suggestion received, but output key was missing."),
+            "trace": data.get("trace")
+        }
     except Exception as e:
-        return f"⚠️ Error connecting to AI Agent: {str(e)}"
+        return {
+            "result": f"⚠️ Error connecting to AI Agent: {str(e)}",
+            "trace": None
+        }
+
+def extract_prompt_fields(trace_data, node_name="Prompt_1"):
+    """Extract fields from first Prompt_1 trace match."""
+    if not trace_data:
+        return {}
+    if isinstance(trace_data, dict):
+        trace_items = [trace_data]
+    elif isinstance(trace_data, list):
+        trace_items = trace_data
+    else:
+        return {}
+
+    for item in trace_items:
+        if not isinstance(item, dict):
+            continue
+        trace = item.get("trace")
+        if not isinstance(trace, dict):
+            continue
+        for trace_type, trace_body in trace.items():
+            if not isinstance(trace_body, dict):
+                continue
+            if trace_body.get("nodeName") != node_name:
+                continue
+            if trace_type == "nodeInputTrace" and isinstance(trace_body.get("fields"), list):
+                return _map_fields(trace_body["fields"])
+    return {}
+
+def _map_fields(fields):
+    mapped = {}
+    for field in fields:
+        if not isinstance(field, dict):
+            continue
+        key = field.get("nodeInputName") or field.get("nodeOutputName")
+        content = field.get("content")
+        if not key or not isinstance(content, dict) or "document" not in content:
+            continue
+        mapped[key] = content["document"]
+    return mapped
  
 # --- INITIALIZATION ---
  
@@ -140,7 +185,8 @@ if menu == "✍️ Compose":
                                 "body": body,
                                 "time": datetime.now().strftime("%d %b, %H:%M"),
                                 "read": False,
-                                "ai_hint": ai_response # Cevabı direkt ekliyoruz
+                                "ai_hint": ai_response.get("result"),
+                                "ai_trace": ai_response.get("trace")
                             }
                             st.session_state.outbox.append(new_email)
                         
@@ -156,7 +202,17 @@ if menu == "✍️ Compose":
             # Sonucu chat balonu içinde göster
             with st.chat_message("assistant", avatar="🤖"):
                 st.markdown(f"**AI Suggestion:**")
-                st.write(st.session_state.latest_result)
+                st.write(st.session_state.latest_result.get("result"))
+                trace_data = st.session_state.latest_result.get("trace")
+                prompt_fields = extract_prompt_fields(trace_data)
+                if prompt_fields:
+                    st.markdown("**Trace (Prompt_1):**")
+                    with st.expander("faq_answer", expanded=False):
+                        st.write(prompt_fields.get("faq_answer", ""))
+                    with st.expander("rss_answer", expanded=False):
+                        st.write(prompt_fields.get("rss_answer", ""))
+                    with st.expander("mail_answer", expanded=False):
+                        st.write(prompt_fields.get("mail_answer", ""))
                 
                 # Aksiyon butonları (Görsel amaçlı)
                 c1, c2 = st.columns(2)
@@ -210,7 +266,8 @@ elif menu == "📥 Incoming":
                             time.sleep(0.5)
                             st.write("Querying Lambda Knowledge Base...")
                             suggestion = get_ai_suggestion(email['body'])
-                            email["ai_hint"] = suggestion
+                            email["ai_hint"] = suggestion.get("result")
+                            email["ai_trace"] = suggestion.get("trace")
                             status.update(label="Analysis Complete!", state="complete", expanded=False)
                         st.rerun()
                 
@@ -220,6 +277,15 @@ elif menu == "📥 Incoming":
                     with st.chat_message("assistant", avatar="🤖"):
                         st.markdown(f"**Suggestion:**")
                         st.markdown(email["ai_hint"])
+                        prompt_fields = extract_prompt_fields(email.get("ai_trace"))
+                        if prompt_fields:
+                            st.markdown("**Trace (Prompt_1):**")
+                            with st.expander("faq_answer", expanded=False):
+                                st.write(prompt_fields.get("faq_answer", ""))
+                            with st.expander("rss_answer", expanded=False):
+                                st.write(prompt_fields.get("rss_answer", ""))
+                            with st.expander("mail_answer", expanded=False):
+                                st.write(prompt_fields.get("mail_answer", ""))
                         
                         st.markdown("---")
                         col_act1, col_act2 = st.columns(2)
