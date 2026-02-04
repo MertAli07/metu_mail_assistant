@@ -14,9 +14,9 @@ st.set_page_config(page_title="Mail Assistant Pro", page_icon="✨", layout="wid
 # Goaltech Lambda URL
 LAMBDA_URL = "https://ngohy4i3pcv5j36nejdmjbcgpq0egfou.lambda-url.eu-central-1.on.aws/"
  
-def get_ai_suggestion(user_text):
+def get_ai_suggestion(user_text, thread_id):
     """Fetches AI suggestion from AWS Lambda."""
-    payload = {"input": {"query": user_text}}
+    payload = {"input": {"query": user_text, "thread_id": thread_id}}
     try:
         # Real Call to Lambda
         response = requests.post(LAMBDA_URL, json=payload, timeout=500)
@@ -212,7 +212,7 @@ if menu == "✍️ Compose":
                         # İşlem başladığını göster
                         with st.spinner("AI Agent is analyzing the request..."):
                             # 1. AI'dan cevabı al
-                            ai_response = get_ai_suggestion(body)
+                            ai_response = get_ai_suggestion(body, thread_id)
                             
                             # 2. Hem ekranda göstermek için kaydet
                             st.session_state.latest_result = ai_response
@@ -317,7 +317,7 @@ elif menu == "📥 Incoming":
                             st.write("Extracting context...")
                             time.sleep(0.5)
                             st.write("Querying Lambda Knowledge Base...")
-                            suggestion = get_ai_suggestion(email['body'])
+                            suggestion = get_ai_suggestion(email['body'], email['thread_id'])
                             email["ai_hint"] = suggestion.get("result")
                             email["ai_trace"] = suggestion.get("trace")
                             email["ai_request_id"] = suggestion.get("request_id")
