@@ -170,13 +170,14 @@ if menu == "✍️ Compose":
         default_to = st.session_state.selected_example["to"]
         default_sub = st.session_state.selected_example["subject"]
         default_body = st.session_state.selected_example["body"]
+        default_thread = "" # Şablonlarda varsayılan thread_id yok
         st.session_state.selected_example = None # Reset
-        # Yeni şablon yüklendiğinde eski sonucu temizle
         st.session_state.latest_result = None
     else:
         default_to = ""
         default_sub = ""
         default_body = ""
+        default_thread = ""
  
     col1, col2 = st.columns([3, 1])
     
@@ -186,13 +187,18 @@ if menu == "✍️ Compose":
             if 'form_to' not in st.session_state: st.session_state.form_to = default_to
             if 'form_sub' not in st.session_state: st.session_state.form_sub = default_sub
             if 'form_body' not in st.session_state: st.session_state.form_body = default_body
+            if 'form_thread_id' not in st.session_state: st.session_state.form_thread_id = default_thread
  
             if default_to:
                 st.session_state.form_to = default_to
                 st.session_state.form_sub = default_sub
                 st.session_state.form_body = default_body
+                st.session_state.form_thread_id = default_thread
  
             with st.form("compose_form", clear_on_submit=False): # Formu temizlemiyoruz ki yazı kalsın
+                # --- THREAD ID EKLENDİ ---
+                thread_id = st.text_input("Thread ID", key="form_thread_id", placeholder="Optional: Enter Thread ID")
+                
                 to_addr = st.text_input("To", key="form_to", placeholder="recipient@metu.edu.tr")
                 subject = st.text_input("Subject", key="form_sub", placeholder="Brief summary of the issue")
                 body = st.text_area("Message Body", key="form_body", height=250)
@@ -214,6 +220,7 @@ if menu == "✍️ Compose":
                             # 3. Hem de Inbox'a (Incoming) kaydet
                             new_email = {
                                 "id": int(time.time()),
+                                "thread_id": thread_id, # --- THREAD ID KAYDEDİLDİ ---
                                 "to": to_addr,
                                 "subject": subject,
                                 "body": body,
@@ -282,12 +289,14 @@ elif menu == "📥 Incoming":
         # Reverse list to show newest first
         for email in reversed(st.session_state.outbox):
             
+            # --- THREAD ID GÖRÜNTÜLEME ---
+            thread_display = f" | 🧵 {email['thread_id']}" if email.get('thread_id') else ""
+
             # Custom HTML Card for the Email Header
-            # Not: Renkler CSS içinde tanımlandı, burada class="email-card" yeterli.
             st.markdown(f"""
             <div class="email-card">
                 <div style="display:flex; justify-content:space-between; font-size:0.8em;">
-                    <span>To: {email['to']}</span>
+                    <span>To: {email['to']} {thread_display}</span>
                     <span>{email['time']}</span>
                 </div>
                 <h4>{email['subject']}</h4>
