@@ -1,0 +1,2 @@
+Üniversitenin akademik faaliyetlerini desteklemek için öğrenci merkezli yazılımlar geliştirmek, öğretim programlarının güncellenmesini kolaylaştıracak sistemlerin tasarlamak ve üniversitenin diğer uygulamalarıyla entegrasyonunu sağlamak.
+METUSİS, SIS, SAİS, 71 nolu program, tez danışmanı atama, tez başlığı, boş ekran, mavi ekran, application, register sayfası, kayıt sayfası, Odtüclass, Cofi, Student Portal

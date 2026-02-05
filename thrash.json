@@ -2,3 +2,12 @@
     "query": "Metu Mailine girememek",
     "thread_id": "bigmom"
 }
+
+{
+    "body": "{thread_id: crocodile, count: 3, formatted_history: [{role: user, content: Metu Mailine girememek}, {role: user, content: Metu Mailine girememek}, {role: user, content: Metu Mailine girememek}], context_text: User: Metu Mailine girememek\\nUser: Metu Mailine girememek\\nUser: Metu Mailine girememek\\n}",
+    "headers": {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json"
+    },
+    "statusCode": 200
+  }

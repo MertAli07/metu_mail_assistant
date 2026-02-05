@@ -1,0 +1,3 @@
+Bilgi İşlem Daire Başkanlığı tarafından sunulan hizmetlerin ODTÜ Portalı ana sayfası üzerinden erişilebilir hale getirilmesi,Geliştirdiği veya açık kaynak olarak uyarlayıp kullanıma sunduğu yazılımların bakımı ve desteği
+"portal, open metu, kalite, Sarı Taşıt Pulu, Kura Sistemi
+Yurt Yönetim Yazılımı, Sağlık ve Rehberlik Merkezi (SRM) Tahlil Sonuçları, e- bordro, ODTÜ Bellek, İŞKUR yazılım"

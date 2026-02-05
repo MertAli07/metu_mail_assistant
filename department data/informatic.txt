@@ -1,0 +1,2 @@
+ODTÜ kullanıcılarına ve dünya genelinde ODTÜ hakkında bilgi almak isteyenlere, elektronik ortamda çeşitli araçlarla iletişim ve bilgi edinme olanakları sunar. Web sayfaları, web tabanlı araçlar, elektronik listeler ve formları düzenlenmesi
+Alan adı, web sayfası, web sitesi, anket, blog sayfası, drupal, grafik, ODTÜ  anasayfa, e-liste üye, elektronik liste, öğretim elemanı duyuru, genel duyuru, emekli duyuru

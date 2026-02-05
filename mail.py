@@ -24,12 +24,14 @@ def get_ai_suggestion(user_text, thread_id):
         data = response.json()
         return {
             "result": data.get("result", "AI Suggestion received, but output key was missing."),
+            "redirection": data.get("redirection"),
             "trace": data.get("trace"),
             "request_id": data.get("request_id")
         }
     except Exception as e:
         return {
             "result": f"⚠️ Error connecting to AI Agent: {str(e)}",
+            "redirection": None,
             "trace": None,
             "request_id": None
         }
@@ -71,6 +73,19 @@ def _map_fields(fields):
             continue
         mapped[key] = content["document"]
     return mapped
+
+def extract_redirection_summary(redirection):
+    """Extract score, name, and email(s) from redirection payload."""
+    if not isinstance(redirection, dict):
+        return {}
+    metadata = redirection.get("metadata")
+    if not isinstance(metadata, dict):
+        metadata = {}
+    return {
+        "score": redirection.get("score"),
+        "name": metadata.get("name"),
+        "email": metadata.get("emails") or metadata.get("email")
+    }
 
 def fetch_bedrock_logs(request_id, limit=50, lookback_minutes=60):
     """Fetch CloudWatch logs for a Bedrock invocation request_id."""
@@ -227,6 +242,7 @@ if menu == "✍️ Compose":
                                 "time": datetime.now().strftime("%d %b, %H:%M"),
                                 "read": False,
                                 "ai_hint": ai_response.get("result"),
+                                "ai_redirection": ai_response.get("redirection"),
                                 "ai_trace": ai_response.get("trace"),
                                 "ai_request_id": ai_response.get("request_id")
                             }
@@ -245,6 +261,11 @@ if menu == "✍️ Compose":
             with st.chat_message("assistant", avatar="🤖"):
                 st.markdown(f"**AI Suggestion:**")
                 st.write(st.session_state.latest_result.get("result"))
+                redirection_summary = extract_redirection_summary(
+                    st.session_state.latest_result.get("redirection")
+                )
+                st.markdown("**Redirection:**")
+                st.json(redirection_summary)
                 trace_data = st.session_state.latest_result.get("trace")
                 prompt_fields = extract_prompt_fields(trace_data)
                 if prompt_fields:
@@ -319,6 +340,7 @@ elif menu == "📥 Incoming":
                             st.write("Querying Lambda Knowledge Base...")
                             suggestion = get_ai_suggestion(email['body'], email['thread_id'])
                             email["ai_hint"] = suggestion.get("result")
+                            email["ai_redirection"] = suggestion.get("redirection")
                             email["ai_trace"] = suggestion.get("trace")
                             email["ai_request_id"] = suggestion.get("request_id")
                             status.update(label="Analysis Complete!", state="complete", expanded=False)
@@ -330,6 +352,11 @@ elif menu == "📥 Incoming":
                     with st.chat_message("assistant", avatar="🤖"):
                         st.markdown(f"**Suggestion:**")
                         st.markdown(email["ai_hint"])
+                        redirection_summary = extract_redirection_summary(
+                            email.get("ai_redirection")
+                        )
+                        st.markdown("**Redirection:**")
+                        st.json(redirection_summary)
                         prompt_fields = extract_prompt_fields(email.get("ai_trace"))
                         if prompt_fields:
                             st.markdown("**Trace (Prompt_1):**")

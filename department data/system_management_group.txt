@@ -1,0 +1,2 @@
+Sunucu altyapısı ve servislerin sürekliliğinin sağlanması
+sunucu, yedekleme, e posta, horde, roundcube, metumail, bulut, metucloud, yönlendirme, mailler silindi, eposta alamıyorum

@@ -1,0 +1,2 @@
+Öğrenci kayıt, ders, not ve mezuniyet işlemlerinin yürütülmesi
+Etkileşimli kayıtlar, kayıt sildirme, ders seçimi, ÖİBS, mezuniyet, yatay geçiş, yan dal, çift ana dal, register, withdrow, add-drop, İYS, lisansüstü başvuru, çevrimiçi başvuru, transcript, YKS, ECTS, Kredi, ortalama, katkı payı iade, ders değerlendirme, ders izlencesi, öğrenci kimlik kartı

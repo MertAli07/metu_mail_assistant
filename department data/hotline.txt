@@ -1,0 +1,2 @@
+Tüm üniversite personeline (Akademik, İdari , Emekli) ve tüm öğrencilerine son kullanıcı bilişim desteği sağlamak, Kullanıcı hesapları (kişisel, web, topluluk, bölüm/birim) açma, silme, uzatma, yönlendirme, şifre işlemleri)
+şifre, parola, kurtarma eposta adresi, kullanıcı hesabı, kullanıcı kodu, kullanıcı kodu formu, web hesabı,kota, useraccount, bilgisayar koordinatörü, misafir kablosuz ağ yetkilendirmesi

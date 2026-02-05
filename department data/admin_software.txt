@@ -1,0 +1,6 @@
+Üniversitenin idari süreçlerini desteklemek amacıyla ihtiyaç duyulan yazılımları geliştirmek, tedarik edilen yazılımları uyarlamak ve işletimini, bu yazılımların kullanıma sunulması, personel verilerinin kullanıldığı bilgi sistemleri ve uygulamaları, Personel Daire Başkanlığı İnsan Kaynakları Yönetim sisteminde yer alan personel verilerinin ihtiyaçlar doğrultusunda sunulması için gerekli entegrasyonların sağlanması,Elektronik belge ve arşiv süreçlerinin yönetimi,  
+"EBYS, izin, bakım onarım formu, vekalet, dsclient ebysde e-imza, lisanslı yazılım, yazılım, microsoft, windows, teams, ODTÜ Mobil Uygulaması, Turnitin
+Proje Akış Yönetim Sistemi (PAYS)
+SKSDB Rezervasyon Sistemi 
+İnsan Kaynakları Yönetim Sistemi (İKYS) 
+Oracle, Phonebook/Telefon Rehberi, Matlab, Adobe, Ansys, ArcGIS, Bitdefender, Comsol, Gradescope, Mathematica, Matlab, Maxqda, Microsoft, MSC, SPSS, Autodesk"
